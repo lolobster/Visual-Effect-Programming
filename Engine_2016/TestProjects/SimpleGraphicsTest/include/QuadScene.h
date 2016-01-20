@@ -1,5 +1,6 @@
 #include "scene.h"
 #include <core/log.h>
+#include "graphics\Shader.h"
 
 class QuadScene : public Scene
 {
@@ -13,53 +14,14 @@ public:
 		m_count = 0.0f;
 		m_hShaderProgram = 0;
 
-		const char* g_strVSProgram =
-			"attribute vec4 g_vVertex;											 \n"
-			"attribute vec4 g_vColor;											 \n"
-			"attribute vec2 g_vTexCoord;										 \n"
-			"varying   vec4 g_vVSColor;                                          \n"
-			"varying   vec2 g_vVSTexCoord;										 \n"
-			"																	 \n"
-			"void main()														 \n"
-			"{																	 \n"
-			"    gl_Position  = vec4( g_vVertex.x, g_vVertex.y,                  \n"
-			"                         g_vVertex.z, g_vVertex.w );                \n"
-			"    g_vVSColor = g_vColor;                                          \n"
-			"    g_vVSTexCoord = g_vTexCoord;                                    \n"
-			"}																	 \n";
-
-
-		const char* g_strFSProgram =
-			"#ifdef GL_FRAGMENT_PRECISION_HIGH									 \n"
-			"   precision highp float;											 \n"
-			"#else																 \n"
-			"   precision mediump float;										 \n"
-			"#endif																 \n"
-			"																	 \n"
-			"varying   vec4 g_vVSColor;                                          \n"
-			"varying   vec2 g_vVSTexCoord;										 \n"
-			"uniform float t;													 \n"
-			"																	 \n"
-			"void main()														 \n"
-			"{																	 \n"
-			"	float x = g_vVSTexCoord.x * 612;                                 \n"
-			"	float y = g_vVSTexCoord.y * 612;								 \n"
-			"    float vv = 0.25 * (											 \n"
-			"    (0.5 + (0.5 * sin(x / 7.0 + t)))+								 \n"
-			"    (0.5 + (0.5 * cos(y / 5.0 - t)))+                               \n"
-			"    (0.5 + (0.5 * sin((x + y) / 6.0 - t)))+                         \n"
-			"    (0.5 + tan(0.5 * tan(sqrt(tan(float(x * x + y * y))) / 4.0 - t)))       \n"
-			"	);                                                               \n"
-			"    gl_FragColor = vec4(vv, vv, vv, 1.0) * g_vVSColor;							 \n"
-			"}																	 \n";
-
 		FRM_SHADER_ATTRIBUTE attributes[3] = {
 			{ "g_vVertex", 0 },
 			{ "g_vColor", 1 },
 			{ "g_vTexCoord", 2 }
 		};
 
-		FrmCompileShaderProgram(g_strVSProgram, g_strFSProgram, &m_hShaderProgram, attributes, sizeof(attributes) / sizeof(FRM_SHADER_ATTRIBUTE));
+		int numAttributes = sizeof(attributes) / sizeof(FRM_SHADER_ATTRIBUTE);
+		m_shader = new graphics::Shader("assets/FullScreenQuad.vs", "assets/SparkleEffect.fragmentS", attributes, numAttributes);
 
 		checkOpenGL();
 	}
@@ -67,19 +29,19 @@ public:
 
 	virtual ~QuadScene()
 	{
-		glDeleteProgram(m_hShaderProgram);
+		
 		LOG("QuadScene destruct");
 	}
 
 
 	virtual void update(graphics::ESContext* esContext, float deltaTime)
 	{
-		m_count += deltaTime;
+		m_count += (deltaTime/3);
 
 		if (m_count > 1.0f)
 			m_count = 0.0f;
 
-		t += (deltaTime/5);
+		t += deltaTime;
 
 	}
 
@@ -122,9 +84,9 @@ public:
 		checkOpenGL();
 
 		// Set the shader program and the texture
-		glUseProgram(m_hShaderProgram);
+		m_shader->bind();
 		checkOpenGL();
-		glUniform1f(glGetUniformLocation(m_hShaderProgram, "t"), t);
+		glUniform1f(glGetUniformLocation(m_shader->getProgram(), "t"), t);
 
 		// Draw the colored quad
 		glVertexAttribPointer(0, 4, GL_FLOAT, 0, 0, VertexPositions);
@@ -155,7 +117,7 @@ private:
 	float m_count;
 	float t;
 	GLuint       m_hShaderProgram;
-
+	core::Ref<graphics::Shader>m_shader;
 };
 
 
