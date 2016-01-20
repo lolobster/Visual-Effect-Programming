@@ -32,10 +32,12 @@ public:
 
 	virtual void update(graphics::ESContext* esContext, float deltaTime)
 	{
-		m_count += (deltaTime / 3);
+		m_count += (deltaTime / 10);
 
 		if (m_count > 1.0f)
 			m_count = 0.0f;
+
+		t += deltaTime/3;
 	}
 
 	virtual void render(graphics::ESContext* esContext)
@@ -78,6 +80,7 @@ public:
 		// Set the shader program and the texture
 		m_shader->bind();
 		checkOpenGL();
+		glUniform1f(glGetUniformLocation(m_shader->getProgram(), "t"), t);
 
 		// Draw the colored quad
 		glVertexAttribPointer(0, 4, GL_FLOAT, 0, 0, VertexPositions);
@@ -107,6 +110,7 @@ public:
 
 private:
 	float m_count;
+	float t;
 	SharedShaderValues m_sharedValues;
 	core::Ref<graphics::ShaderUniforms>m_material;
 	core::Ref<graphics::Shader>m_shader;
