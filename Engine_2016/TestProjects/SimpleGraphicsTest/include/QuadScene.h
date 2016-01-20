@@ -12,7 +12,6 @@ public:
 		checkOpenGL();
 
 		m_count = 0.0f;
-		m_hShaderProgram = 0;
 
 		FRM_SHADER_ATTRIBUTE attributes[3] = {
 			{ "g_vVertex", 0 },
@@ -116,7 +115,6 @@ public:
 private:
 	float m_count;
 	float t;
-	GLuint       m_hShaderProgram;
 	core::Ref<graphics::Shader>m_shader;
 };
 

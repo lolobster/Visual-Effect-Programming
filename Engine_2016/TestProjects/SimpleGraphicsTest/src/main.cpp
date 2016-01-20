@@ -8,10 +8,11 @@
 
 #include "TriangleScene.h"
 #include "QuadScene.h"
+#include "TestScene.h"
 
 // Current scene and max num of scenes
 core::Ref<Scene> m_currentScene = 0;
-static const int NUM_SCENES = 2;
+static const int NUM_SCENES = 3;
 static int sceneIndex = 0; // Current scene index.
 
 // Initialize engine globals (memory manager)
@@ -39,6 +40,7 @@ void changeCurrentScene(int index)
 	{
 	case 0: m_currentScene = new TriangleScene(); break;
 	case 1: m_currentScene = new QuadScene(); break;
+	case 2: m_currentScene = new TestScene(); break;
 	default:
 		break;
 	}
