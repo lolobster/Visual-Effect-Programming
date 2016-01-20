@@ -46,9 +46,9 @@ public:
 			"	float y = g_vVSTexCoord.y * 612;								 \n"
 			"    float vv = 0.25 * (											 \n"
 			"    (0.5 + (0.5 * sin(x / 7.0 + t)))+								 \n"
-			"    (0.5 + (0.5 * sin(y / 5.0 - t)))+                               \n"
+			"    (0.5 + (0.5 * cos(y / 5.0 - t)))+                               \n"
 			"    (0.5 + (0.5 * sin((x + y) / 6.0 - t)))+                         \n"
-			"    (0.5 + (0.5 * tan(sqrt(float(x * x + y * y)) / 4.0 - t)))       \n"
+			"    (0.5 + tan(0.5 * tan(sqrt(tan(float(x * x + y * y))) / 4.0 - t)))       \n"
 			"	);                                                               \n"
 			"    gl_FragColor = vec4(vv, vv, vv, 1.0) * g_vVSColor;							 \n"
 			"}																	 \n";
@@ -79,7 +79,7 @@ public:
 		if (m_count > 1.0f)
 			m_count = 0.0f;
 
-		t += deltaTime;
+		t += (deltaTime/5);
 
 	}
 
@@ -96,10 +96,10 @@ public:
 		float fSize = 0.5f;
 		float VertexPositions[] =
 		{
-			-0.95, -0.95, 0.0f, 1.0f,
-			0.95, -0.95, 0.0f, 1.0f,
-			-0.95, 0.95, 0.0f, 1.0f,
-			0.95, 0.95, 0.0f, 1.0f,
+			-1.0, -1.0, 0.0f, 1.0f,
+			1.0, -1.0, 0.0f, 1.0f,
+			-1.0, 1.0, 0.0f, 1.0f,
+			1.0, 1.0, 0.0f, 1.0f,
 		};
 
 		float VertexColors[] = { 
