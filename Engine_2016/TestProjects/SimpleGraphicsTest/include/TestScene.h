@@ -12,9 +12,7 @@ public:
 
 		LOG("TestScene construct");
 		checkOpenGL();
-
-		m_count = 0.0f;
-
+		m_sharedValues.totalTime = 0.0f;
 		FRM_SHADER_ATTRIBUTE attributes[3] = {
 			{ "g_vVertex", 0 },
 			{ "g_vColor", 1 },
@@ -32,12 +30,7 @@ public:
 
 	virtual void update(graphics::ESContext* esContext, float deltaTime)
 	{
-		m_count += (deltaTime / 10);
-
-		if (m_count > 1.0f)
-			m_count = 0.0f;
-
-		t += deltaTime/3;
+		m_sharedValues.totalTime += deltaTime;
 	}
 
 	virtual void render(graphics::ESContext* esContext)
@@ -73,14 +66,14 @@ public:
 		};
 
 		// Clear the backbuffer and depth-buffer
-		glClearColor(0.0f, m_count, m_count, 1.0f);
+		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		checkOpenGL();
 
 		// Set the shader program and the texture
-		m_shader->bind();
+		m_material->bind();
 		checkOpenGL();
-		glUniform1f(glGetUniformLocation(m_shader->getProgram(), "t"), t);
+		
 
 		// Draw the colored quad
 		glVertexAttribPointer(0, 4, GL_FLOAT, 0, 0, VertexPositions);
@@ -109,8 +102,6 @@ public:
 	}
 
 private:
-	float m_count;
-	float t;
 	SharedShaderValues m_sharedValues;
 	core::Ref<graphics::ShaderUniforms>m_material;
 	core::Ref<graphics::Shader>m_shader;

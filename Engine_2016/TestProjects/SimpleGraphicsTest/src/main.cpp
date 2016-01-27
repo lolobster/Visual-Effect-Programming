@@ -9,6 +9,7 @@
 #include "TriangleScene.h"
 #include "QuadScene.h"
 #include "TestScene.h"
+#include "TeaPotScene.h"
 
 // Current scene and max num of scenes
 core::Ref<Scene> m_currentScene = 0;
@@ -41,6 +42,7 @@ void changeCurrentScene(int index)
 	case 0: m_currentScene = new TriangleScene(); break;
 	case 1: m_currentScene = new QuadScene(); break;
 	case 2: m_currentScene = new TestScene(); break;
+	//case 3: m_currentScene = new TeaPotScene(); break;
 	default:
 		break;
 	}
