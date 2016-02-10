@@ -4,6 +4,8 @@
 #include "MyMaterials.h"
 #include "SimpleMaterialUniforms.h"
 #include "teapot.h"
+#include "graphics\Texture.h"
+#include "graphics\Image.h"
 #include "graphics\Mesh.h"
 
 class PlimPlomScene : public Scene
@@ -23,6 +25,10 @@ public:
 		core::Ref<graphics::Shader>shader =
 			new graphics::Shader("assets/PlimPlom.vs", "assets/PlimPlom.fragS",
 			attributes, sizeof(attributes) / sizeof(FRM_SHADER_ATTRIBUTE));
+
+		m_texture = new graphics::Texture2D(); 
+		m_image->loadFromTGA("assets/doge.tga");
+		m_texture->setData(m_image);
 
 		SimpleMaterialUniforms* simpleMaterialUniforms = new SimpleMaterialUniforms(shader, &m_sharedValues);
 
@@ -132,6 +138,8 @@ public:
 private:
 	SharedShaderValues m_sharedValues;
 	core::Ref<graphics::Shader> m_shader;
+	core::Ref<graphics::Texture2D> m_texture;
+	core::Ref<graphics::Image> m_image;
 	core::Ref<graphics::Mesh>m_mesh;
 	core::Ref<graphics::ShaderUniforms>m_material;
 	slmath::mat4 m_matProjection;
