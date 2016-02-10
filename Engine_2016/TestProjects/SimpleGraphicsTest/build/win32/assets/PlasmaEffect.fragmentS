@@ -1,0 +1,22 @@
+#ifdef GL_FRAGMENT_PRECISION_HIGH									 
+   precision highp float;											 
+#else																 
+   precision mediump float;										 
+#endif																 
+																	 
+varying   vec4 g_vVSColor;                                          
+varying   vec2 g_vVSTexCoord;										 
+uniform float totalTime;													
+																	 
+void main()														 
+{																	 
+	float x = g_vVSTexCoord.x * 50;                                 
+	float y = g_vVSTexCoord.y * 50;								 
+    float vv = 0.25 * (											 
+    (0.5 + (0.5 * sin(x / 7.0 + totalTime)))+								 
+    (0.5 + (0.5 * cos(y / 5.0 - totalTime)))+                               
+    (-tan(0.5 + (0.5 * sin(tan(x + y) / 6.0 - totalTime))))+                         
+    (-tan(0.5 + (0.5 * tan(sqrt(float(x * x + y * y)) / 4.0 - totalTime))))       
+	);                                                               
+    gl_FragColor = vec4(vv, vv, vv, 1.0) * g_vVSColor;							 
+}	

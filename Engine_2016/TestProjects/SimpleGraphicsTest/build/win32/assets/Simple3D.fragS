@@ -1,0 +1,17 @@
+// default to medium precision
+precision mediump float;
+
+#ifdef GL_FRAGMENT_PRECISION_HIGH
+	#define NEED_HIGHP highp
+#else
+	#define NEED_HIGHP mediump
+#endif
+uniform float totalTime;
+
+void main()
+{
+	
+	gl_FragColor.rgba = vec4(1.0f, 0.2f, 0.5f, 1.0f) * totalTime;
+
+
+}

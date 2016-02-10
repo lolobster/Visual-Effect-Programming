@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\animation\AnimationTimeline.cpp" />
+    <ClCompile Include="..\..\src\core\ElapsedTimer.cpp" />
+    <ClCompile Include="..\..\src\core\FileStream.cpp" />
+    <ClCompile Include="..\..\src\core\log.cpp" />
+    <ClCompile Include="..\..\src\core\MemoryManager.cpp" />
+    <ClCompile Include="..\..\src\core\Object.cpp" />
+    <ClCompile Include="..\..\src\core\PropertySet.cpp" />
+    <ClCompile Include="..\..\src\eastl\allocator.cpp" />
+    <ClCompile Include="..\..\src\eastl\assert.cpp" />
+    <ClCompile Include="..\..\src\eastl\fixed_pool.cpp" />
+    <ClCompile Include="..\..\src\eastl\hashtable.cpp" />
+    <ClCompile Include="..\..\src\eastl\red_black_tree.cpp" />
+    <ClCompile Include="..\..\src\eastl\string.cpp" />
+    <ClCompile Include="..\..\src\graphics\es_util.cpp" />
+    <ClCompile Include="..\..\src\graphics\FrmInput.cpp" />
+    <ClCompile Include="..\..\src\graphics\FrmResourceGLES.cpp" />
+    <ClCompile Include="..\..\src\graphics\FrmShader.cpp" />
+    <ClCompile Include="..\..\src\graphics\FrmUtils.cpp" />
+    <ClCompile Include="..\..\src\graphics\FrmUtilsGLES.cpp" />
+    <ClCompile Include="..\..\src\graphics\SpriteBatch.cpp" />
+    <ClCompile Include="..\..\src\graphics\Texture.cpp" />
+    <ClCompile Include="..\..\src\lua\lapi.c" />
+    <ClCompile Include="..\..\src\lua\lauxlib.c" />
+    <ClCompile Include="..\..\src\lua\lbaselib.c" />
+    <ClCompile Include="..\..\src\lua\lbitlib.c" />
+    <ClCompile Include="..\..\src\lua\lcode.c" />
+    <ClCompile Include="..\..\src\lua\lcorolib.c" />
+    <ClCompile Include="..\..\src\lua\lctype.c" />
+    <ClCompile Include="..\..\src\lua\ldblib.c" />
+    <ClCompile Include="..\..\src\lua\ldebug.c" />
+    <ClCompile Include="..\..\src\lua\ldo.c" />
+    <ClCompile Include="..\..\src\lua\ldump.c" />
+    <ClCompile Include="..\..\src\lua\lfunc.c" />
+    <ClCompile Include="..\..\src\lua\lgc.c" />
+    <ClCompile Include="..\..\src\lua\linit.c" />
+    <ClCompile Include="..\..\src\lua\liolib.c" />
+    <ClCompile Include="..\..\src\lua\llex.c" />
+    <ClCompile Include="..\..\src\lua\lmathlib.c" />
+    <ClCompile Include="..\..\src\lua\lmem.c" />
+    <ClCompile Include="..\..\src\lua\loadlib.c" />
+    <ClCompile Include="..\..\src\lua\lobject.c" />
+    <ClCompile Include="..\..\src\lua\lopcodes.c" />
+    <ClCompile Include="..\..\src\lua\loslib.c" />
+    <ClCompile Include="..\..\src\lua\lparser.c" />
+    <ClCompile Include="..\..\src\lua\lstate.c" />
+    <ClCompile Include="..\..\src\lua\lstring.c" />
+    <ClCompile Include="..\..\src\lua\lstrlib.c" />
+    <ClCompile Include="..\..\src\lua\ltable.c" />
+    <ClCompile Include="..\..\src\lua\ltablib.c" />
+    <ClCompile Include="..\..\src\lua\ltm.c" />
+    <ClCompile Include="..\..\src\lua\lua.c" />
+    <ClCompile Include="..\..\src\lua\luac.c" />
+    <ClCompile Include="..\..\src\lua\lundump.c" />
+    <ClCompile Include="..\..\src\lua\lvm.c" />
+    <ClCompile Include="..\..\src\lua\lzio.c" />
+    <ClCompile Include="..\..\src\scene\Entity.cpp" />
+    <ClCompile Include="..\..\src\slmath\float_util.cpp" />
+    <ClCompile Include="..\..\src\slmath\intersect_util.cpp" />
+    <ClCompile Include="..\..\src\slmath\mat4.cpp" />
+    <ClCompile Include="..\..\src\slmath\quat.cpp" />
+    <ClCompile Include="..\..\src\slmath\random.cpp" />
+    <ClCompile Include="..\..\src\slmath\random_util.cpp" />
+    <ClCompile Include="..\..\src\slmath\runtime_checks.cpp" />
+    <ClCompile Include="..\..\src\slmath\slmath_lua.cpp" />
+    <ClCompile Include="..\..\src\slmath\vec2.cpp" />
+    <ClCompile Include="..\..\src\slmath\vec3.cpp" />
+    <ClCompile Include="..\..\src\slmath\vec4.cpp" />
+    <ClCompile Include="..\..\src\ticpp\ticpp.cpp" />
+    <ClCompile Include="..\..\src\ticpp\tinystr.cpp" />
+    <ClCompile Include="..\..\src\ticpp\tinyxml.cpp" />
+    <ClCompile Include="..\..\src\ticpp\tinyxmlerror.cpp" />
+    <ClCompile Include="..\..\src\ticpp\tinyxmlparser.cpp" />
+    <ClCompile Include="..\..\src\win32\es_util_win32.cpp" />
+    <ClCompile Include="..\..\src\win32\FrmNoise_Platform.cpp" />
+    <ClCompile Include="..\..\src\win32\FrmPlatform.cpp" />
+    <ClCompile Include="..\..\src\win32\FrmStdlib_Platform.cpp" />
+    <ClCompile Include="..\..\src\win32\FrmUtils_Platform.cpp" />
+    <ClCompile Include="..\..\src\win32\input_win32.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\animation\AnimationRepeatMode.h" />
+    <ClInclude Include="..\..\include\animation\AnimationTimeline.h" />
+    <ClInclude Include="..\..\include\animation\AnimationTrack.h" />
+    <ClInclude Include="..\..\include\animation\Keyframe.h" />
+    <ClInclude Include="..\..\include\animation\KeyframeSequence.h" />
+    <ClInclude Include="..\..\include\core\Allocator.h" />
+    <ClInclude Include="..\..\include\core\CommandlineArgs.h" />
+    <ClInclude Include="..\..\include\core\ElapsedTimer.h" />
+    <ClInclude Include="..\..\include\core\FileStream.h" />
+    <ClInclude Include="..\..\include\core\FreeListAllocator.h" />
+    <ClInclude Include="..\..\include\core\Globals.h" />
+    <ClInclude Include="..\..\include\core\Input.h" />
+    <ClInclude Include="..\..\include\core\LinearAllocator.h" />
+    <ClInclude Include="..\..\include\core\log.h" />
+    <ClInclude Include="..\..\include\core\minijson.h" />
+    <ClInclude Include="..\..\include\core\Object.h" />
+    <ClInclude Include="..\..\include\core\PoolAllocator.h" />
+    <ClInclude Include="..\..\include\core\PropertySet.h" />
+    <ClInclude Include="..\..\include\core\Ref.h" />
+    <ClInclude Include="..\..\include\core\RefCounter.h" />
+    <ClInclude Include="..\..\include\core\Singleton.h" />
+    <ClInclude Include="..\..\include\core\StackAllocator.h" />
+    <ClInclude Include="..\..\include\core\Stream.h" />
+    <ClInclude Include="..\..\include\EABase\config\eacompiler.h" />
+    <ClInclude Include="..\..\include\EABase\config\eacompilertraits.h" />
+    <ClInclude Include="..\..\include\EABase\config\eaplatform.h" />
+    <ClInclude Include="..\..\include\EABase\eabase.h" />
+    <ClInclude Include="..\..\include\EABase\earesult.h" />
+    <ClInclude Include="..\..\include\EASTL\algorithm.h" />
+    <ClInclude Include="..\..\include\EASTL\allocator.h" />
+    <ClInclude Include="..\..\include\EASTL\bitset.h" />
+    <ClInclude Include="..\..\include\EASTL\bonus\sort_extra.h" />
+    <ClInclude Include="..\..\include\EASTL\core_allocator_adapter.h" />
+    <ClInclude Include="..\..\include\EASTL\fixed_allocator.h" />
+    <ClInclude Include="..\..\include\EASTL\fixed_hash_map.h" />
+    <ClInclude Include="..\..\include\EASTL\fixed_hash_set.h" />
+    <ClInclude Include="..\..\include\EASTL\fixed_list.h" />
+    <ClInclude Include="..\..\include\EASTL\fixed_map.h" />
+    <ClInclude Include="..\..\include\EASTL\fixed_set.h" />
+    <ClInclude Include="..\..\include\EASTL\fixed_string.h" />
+    <ClInclude Include="..\..\include\EASTL\fixed_substring.h" />
+    <ClInclude Include="..\..\include\EASTL\fixed_vector.h" />
+    <ClInclude Include="..\..\include\EASTL\functional.h" />
+    <ClInclude Include="..\..\include\EASTL\hash_map.h" />
+    <ClInclude Include="..\..\include\EASTL\hash_set.h" />
+    <ClInclude Include="..\..\include\EASTL\heap.h" />
+    <ClInclude Include="..\..\include\EASTL\internal\config.h" />
+    <ClInclude Include="..\..\include\EASTL\internal\eastl_rw.h" />
+    <ClInclude Include="..\..\include\EASTL\internal\fixed_pool.h" />
+    <ClInclude Include="..\..\include\EASTL\internal\generic_iterator.h" />
+    <ClInclude Include="..\..\include\EASTL\internal\hashtable.h" />
+    <ClInclude Include="..\..\include\EASTL\internal\red_black_tree.h" />
+    <ClInclude Include="..\..\include\EASTL\internal\type_compound.h" />
+    <ClInclude Include="..\..\include\EASTL\internal\type_fundamental.h" />
+    <ClInclude Include="..\..\include\EASTL\internal\type_pod.h" />
+    <ClInclude Include="..\..\include\EASTL\internal\type_properties.h" />
+    <ClInclude Include="..\..\include\EASTL\internal\type_transformations.h" />
+    <ClInclude Include="..\..\include\EASTL\iterator.h" />
+    <ClInclude Include="..\..\include\EASTL\list.h" />
+    <ClInclude Include="..\..\include\EASTL\map.h" />
+    <ClInclude Include="..\..\include\EASTL\memory.h" />
+    <ClInclude Include="..\..\include\EASTL\set.h" />
+    <ClInclude Include="..\..\include\EASTL\sort.h" />
+    <ClInclude Include="..\..\include\EASTL\string.h" />
+    <ClInclude Include="..\..\include\EASTL\type_traits.h" />
+    <ClInclude Include="..\..\include\EASTL\utility.h" />
+    <ClInclude Include="..\..\include\EASTL\vector.h" />
+    <ClInclude Include="..\..\include\EASTL\vector_map.h" />
+    <ClInclude Include="..\..\include\graphics\FrmInput.h" />
+    <ClInclude Include="..\..\include\graphics\FrmMath.h" />
+    <ClInclude Include="..\..\include\graphics\FrmMesh.h" />
+    <ClInclude Include="..\..\include\graphics\FrmNoise.h" />
+    <ClInclude Include="..\..\include\graphics\frmplatform.h" />
+    <ClInclude Include="..\..\include\graphics\FrmResource.h" />
+    <ClInclude Include="..\..\include\graphics\FrmResourceGLES.h" />
+    <ClInclude Include="..\..\include\graphics\FrmShader.h" />
+    <ClInclude Include="..\..\include\graphics\FrmStdlib.h" />
+    <ClInclude Include="..\..\include\graphics\FrmUtils.h" />
+    <ClInclude Include="..\..\include\graphics\FrmUtilsGLES.h" />
+    <ClInclude Include="..\..\include\graphics\Image.h" />
+    <ClInclude Include="..\..\include\graphics\Mesh.h" />
+    <ClInclude Include="..\..\include\graphics\Renderer.h" />
+    <ClInclude Include="..\..\include\graphics\Shader.h" />
+    <ClInclude Include="..\..\include\graphics\SpriteBatch.h" />
+    <ClInclude Include="..\..\include\graphics\Texture.h" />
+    <ClInclude Include="..\..\include\lua\lapi.h" />
+    <ClInclude Include="..\..\include\lua\lauxlib.h" />
+    <ClInclude Include="..\..\include\lua\lcode.h" />
+    <ClInclude Include="..\..\include\lua\lctype.h" />
+    <ClInclude Include="..\..\include\lua\ldebug.h" />
+    <ClInclude Include="..\..\include\lua\ldo.h" />
+    <ClInclude Include="..\..\include\lua\lfunc.h" />
+    <ClInclude Include="..\..\include\lua\lgc.h" />
+    <ClInclude Include="..\..\include\lua\llex.h" />
+    <ClInclude Include="..\..\include\lua\llimits.h" />
+    <ClInclude Include="..\..\include\lua\lmem.h" />
+    <ClInclude Include="..\..\include\lua\lobject.h" />
+    <ClInclude Include="..\..\include\lua\lopcodes.h" />
+    <ClInclude Include="..\..\include\lua\lparser.h" />
+    <ClInclude Include="..\..\include\lua\lstate.h" />
+    <ClInclude Include="..\..\include\lua\lstring.h" />
+    <ClInclude Include="..\..\include\lua\ltable.h" />
+    <ClInclude Include="..\..\include\lua\ltm.h" />
+    <ClInclude Include="..\..\include\lua\lua.h" />
+    <ClInclude Include="..\..\include\lua\lua.hpp" />
+    <ClInclude Include="..\..\include\lua\luaconf.h" />
+    <ClInclude Include="..\..\include\lua\lualib.h" />
+    <ClInclude Include="..\..\include\lua\lundump.h" />
+    <ClInclude Include="..\..\include\lua\lvm.h" />
+    <ClInclude Include="..\..\include\lua\lzio.h" />
+    <ClInclude Include="..\..\include\scene\Entity.h" />
+    <ClInclude Include="..\..\include\slmath\float_util.h" />
+    <ClInclude Include="..\..\include\slmath\intersect_util.h" />
+    <ClInclude Include="..\..\include\slmath\mat4.h" />
+    <ClInclude Include="..\..\include\slmath\mtrnd.h" />
+    <ClInclude Include="..\..\include\slmath\quat.h" />
+    <ClInclude Include="..\..\include\slmath\random.h" />
+    <ClInclude Include="..\..\include\slmath\random_util.h" />
+    <ClInclude Include="..\..\include\slmath\runtime_checks.h" />
+    <ClInclude Include="..\..\include\slmath\simd.h" />
+    <ClInclude Include="..\..\include\slmath\slmath.h" />
+    <ClInclude Include="..\..\include\slmath\slmath_configure.h" />
+    <ClInclude Include="..\..\include\slmath\slmath_lua.h" />
+    <ClInclude Include="..\..\include\slmath\slmath_pp.h" />
+    <ClInclude Include="..\..\include\slmath\vec2.h" />
+    <ClInclude Include="..\..\include\slmath\vec3.h" />
+    <ClInclude Include="..\..\include\slmath\vec4.h" />
+    <ClInclude Include="..\..\include\slmath\vec_impl.h" />
+    <ClInclude Include="..\..\include\ticpp\ticpp.h" />
+    <ClInclude Include="..\..\include\ticpp\ticppapi.h" />
+    <ClInclude Include="..\..\include\ticpp\ticpprc.h" />
+    <ClInclude Include="..\..\include\ticpp\tinystr.h" />
+    <ClInclude Include="..\..\include\ticpp\tinyxml.h" />
+    <ClInclude Include="..\..\src\win32\es_util_win32.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\include\animation\AnimationTrack.inl" />
+    <None Include="..\..\include\animation\Keyframe.inl" />
+    <None Include="..\..\include\animation\KeyframeSequence.inl" />
+    <None Include="..\..\include\core\Ref.inl" />
+    <None Include="..\..\include\slmath\float_util.inl" />
+    <None Include="..\..\include\slmath\mat4.inl" />
+    <None Include="..\..\include\slmath\quat.inl" />
+    <None Include="..\..\include\slmath\random.inl" />
+    <None Include="..\..\include\slmath\runtime_checks.inl" />
+    <None Include="..\..\include\slmath\vec2.inl" />
+    <None Include="..\..\include\slmath\vec3.inl" />
+    <None Include="..\..\include\slmath\vec4.inl" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{16E5119B-4795-4B3C-A90F-BE9EFA1617E4}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>engine</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\include\graphics\win32;$(ProjectDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\include\graphics\win32;$(ProjectDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

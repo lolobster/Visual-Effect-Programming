@@ -1,0 +1,758 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\EASTL">
+      <UniqueIdentifier>{b54b2ab3-a108-4da5-8bd2-88f8179e9f5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\EABase">
+      <UniqueIdentifier>{437d902d-729c-4d14-abe5-819990e2d2f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\EABase\config">
+      <UniqueIdentifier>{69c36a8d-5ecf-46f1-8f72-bb45bdcfe1e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\EASTL\internal">
+      <UniqueIdentifier>{dcc03b39-fda0-4910-b298-a6b38a10fb8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\EASTL\bonus">
+      <UniqueIdentifier>{c1120818-5148-410e-9ad0-08b30c216e05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\slmath">
+      <UniqueIdentifier>{7e78cd66-51db-4400-b8ea-780cc1002bc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ticpp">
+      <UniqueIdentifier>{89d01a02-6dba-44ce-b5de-4ad8ac669c2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ticpp">
+      <UniqueIdentifier>{d78a0eed-9b93-4338-9bcb-1476f1e310a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\lua">
+      <UniqueIdentifier>{668cd379-cbf6-4ba4-a88c-44e6b0e9cde4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lua">
+      <UniqueIdentifier>{a3342cda-7769-408e-a417-3d22f0812cff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core">
+      <UniqueIdentifier>{e1492e8b-116c-4d24-95b3-fbdb0174cc78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\graphics">
+      <UniqueIdentifier>{f60a1bca-51fb-4acd-84f2-783ae0bdc132}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core">
+      <UniqueIdentifier>{98186e05-9e8f-47ba-a453-999a3d0694da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\graphics">
+      <UniqueIdentifier>{3f4e5e79-2239-4f42-81d6-6f59c5e44162}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\slmath">
+      <UniqueIdentifier>{baeb9e02-317f-454f-bb41-c337a13863a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\eastl">
+      <UniqueIdentifier>{72c96676-6ff0-4a53-b00e-124de0d0de9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\win32">
+      <UniqueIdentifier>{57dc12ed-45a0-43cb-a513-a0d561a7393d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene">
+      <UniqueIdentifier>{8feef02d-0d9b-4108-8d43-97c02db0a246}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\animation">
+      <UniqueIdentifier>{5867dff5-1f9b-4b9e-8da8-cfc23622adca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\scene">
+      <UniqueIdentifier>{337fa8a0-9efc-44da-8728-1622f8ba0989}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\animation">
+      <UniqueIdentifier>{afbbb52d-8034-43bb-a2ca-35801b7ea27d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\ticpp\ticpp.cpp">
+      <Filter>Source Files\ticpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ticpp\tinyxmlparser.cpp">
+      <Filter>Source Files\ticpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ticpp\tinystr.cpp">
+      <Filter>Source Files\ticpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ticpp\tinyxml.cpp">
+      <Filter>Source Files\ticpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ticpp\tinyxmlerror.cpp">
+      <Filter>Source Files\ticpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lapi.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lauxlib.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lbaselib.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lbitlib.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lcode.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lcorolib.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lctype.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\ldblib.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\ldebug.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\ldo.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\ldump.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lfunc.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lgc.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\linit.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\liolib.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\llex.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lmathlib.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lmem.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\loadlib.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lobject.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lopcodes.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\loslib.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lparser.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lstate.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lstring.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lstrlib.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\ltable.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\ltablib.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\ltm.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lua.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\luac.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lundump.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lvm.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lua\lzio.c">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\ElapsedTimer.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\FileStream.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\log.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\MemoryManager.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\Object.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\PropertySet.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\graphics\es_util.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\graphics\FrmInput.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\graphics\FrmResourceGLES.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\graphics\FrmShader.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\graphics\FrmUtils.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\graphics\FrmUtilsGLES.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\graphics\SpriteBatch.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\graphics\Texture.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\eastl\hashtable.cpp">
+      <Filter>Source Files\eastl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\eastl\red_black_tree.cpp">
+      <Filter>Source Files\eastl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\eastl\string.cpp">
+      <Filter>Source Files\eastl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\slmath\float_util.cpp">
+      <Filter>Source Files\slmath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\slmath\intersect_util.cpp">
+      <Filter>Source Files\slmath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\slmath\mat4.cpp">
+      <Filter>Source Files\slmath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\slmath\quat.cpp">
+      <Filter>Source Files\slmath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\slmath\random.cpp">
+      <Filter>Source Files\slmath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\slmath\random_util.cpp">
+      <Filter>Source Files\slmath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\slmath\runtime_checks.cpp">
+      <Filter>Source Files\slmath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\slmath\slmath_lua.cpp">
+      <Filter>Source Files\slmath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\slmath\vec2.cpp">
+      <Filter>Source Files\slmath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\slmath\vec3.cpp">
+      <Filter>Source Files\slmath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\slmath\vec4.cpp">
+      <Filter>Source Files\slmath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\win32\es_util_win32.cpp">
+      <Filter>Source Files\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\win32\FrmNoise_Platform.cpp">
+      <Filter>Source Files\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\win32\FrmPlatform.cpp">
+      <Filter>Source Files\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\win32\FrmStdlib_Platform.cpp">
+      <Filter>Source Files\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\win32\FrmUtils_Platform.cpp">
+      <Filter>Source Files\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\eastl\allocator.cpp">
+      <Filter>Source Files\eastl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\eastl\assert.cpp">
+      <Filter>Source Files\eastl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\eastl\fixed_pool.cpp">
+      <Filter>Source Files\eastl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\win32\input_win32.cpp">
+      <Filter>Source Files\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scene\Entity.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\animation\AnimationTimeline.cpp">
+      <Filter>Source Files\animation</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\EASTL\algorithm.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\allocator.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\bitset.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\core_allocator_adapter.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\fixed_allocator.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\fixed_hash_map.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\fixed_hash_set.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\fixed_list.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\fixed_map.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\fixed_set.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\fixed_string.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\fixed_substring.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\fixed_vector.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\functional.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\hash_map.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\hash_set.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\heap.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\iterator.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\list.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\map.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\memory.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\set.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\sort.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\string.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\type_traits.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\utility.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\vector.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\vector_map.h">
+      <Filter>Header Files\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\internal\config.h">
+      <Filter>Header Files\EASTL\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\internal\eastl_rw.h">
+      <Filter>Header Files\EASTL\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\internal\fixed_pool.h">
+      <Filter>Header Files\EASTL\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\internal\generic_iterator.h">
+      <Filter>Header Files\EASTL\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\internal\hashtable.h">
+      <Filter>Header Files\EASTL\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\internal\red_black_tree.h">
+      <Filter>Header Files\EASTL\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\internal\type_compound.h">
+      <Filter>Header Files\EASTL\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\internal\type_fundamental.h">
+      <Filter>Header Files\EASTL\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\internal\type_pod.h">
+      <Filter>Header Files\EASTL\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\internal\type_properties.h">
+      <Filter>Header Files\EASTL\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\internal\type_transformations.h">
+      <Filter>Header Files\EASTL\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EASTL\bonus\sort_extra.h">
+      <Filter>Header Files\EASTL\bonus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EABase\eabase.h">
+      <Filter>Header Files\EABase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EABase\config\eacompiler.h">
+      <Filter>Header Files\EABase\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EABase\config\eacompilertraits.h">
+      <Filter>Header Files\EABase\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EABase\config\eaplatform.h">
+      <Filter>Header Files\EABase\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\EABase\earesult.h">
+      <Filter>Header Files\EABase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\slmath\float_util.h">
+      <Filter>Header Files\slmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\slmath\intersect_util.h">
+      <Filter>Header Files\slmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\slmath\mat4.h">
+      <Filter>Header Files\slmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\slmath\mtrnd.h">
+      <Filter>Header Files\slmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\slmath\quat.h">
+      <Filter>Header Files\slmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\slmath\random.h">
+      <Filter>Header Files\slmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\slmath\random_util.h">
+      <Filter>Header Files\slmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\slmath\runtime_checks.h">
+      <Filter>Header Files\slmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\slmath\simd.h">
+      <Filter>Header Files\slmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\slmath\slmath.h">
+      <Filter>Header Files\slmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\slmath\slmath_configure.h">
+      <Filter>Header Files\slmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\slmath\slmath_lua.h">
+      <Filter>Header Files\slmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\slmath\slmath_pp.h">
+      <Filter>Header Files\slmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\slmath\vec_impl.h">
+      <Filter>Header Files\slmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\slmath\vec2.h">
+      <Filter>Header Files\slmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\slmath\vec3.h">
+      <Filter>Header Files\slmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\slmath\vec4.h">
+      <Filter>Header Files\slmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ticpp\ticpp.h">
+      <Filter>Header Files\ticpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ticpp\ticppapi.h">
+      <Filter>Header Files\ticpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ticpp\ticpprc.h">
+      <Filter>Header Files\ticpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ticpp\tinystr.h">
+      <Filter>Header Files\ticpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ticpp\tinyxml.h">
+      <Filter>Header Files\ticpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\lapi.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\lauxlib.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\lcode.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\lctype.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\ldebug.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\ldo.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\lfunc.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\lgc.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\llex.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\llimits.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\lmem.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\lobject.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\lopcodes.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\lparser.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\lstate.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\lstring.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\ltable.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\ltm.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\lua.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\lua.hpp">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\luaconf.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\lualib.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\lundump.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\lvm.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\lua\lzio.h">
+      <Filter>Header Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\win32\es_util_win32.h">
+      <Filter>Source Files\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\Allocator.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\CommandlineArgs.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\ElapsedTimer.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\FileStream.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\FreeListAllocator.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\Globals.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\LinearAllocator.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\log.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\minijson.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\Object.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\PoolAllocator.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\PropertySet.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\Ref.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\RefCounter.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\Singleton.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\StackAllocator.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\Stream.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\graphics\FrmInput.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\graphics\FrmMath.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\graphics\FrmMesh.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\graphics\FrmNoise.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\graphics\frmplatform.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\graphics\FrmResource.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\graphics\FrmResourceGLES.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\graphics\FrmShader.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\graphics\FrmStdlib.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\graphics\FrmUtils.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\graphics\FrmUtilsGLES.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\graphics\Image.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\graphics\Mesh.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\graphics\Renderer.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\graphics\Shader.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\graphics\SpriteBatch.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\graphics\Texture.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\Input.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\scene\Entity.h">
+      <Filter>Header Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\animation\AnimationRepeatMode.h">
+      <Filter>Header Files\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\animation\AnimationTimeline.h">
+      <Filter>Header Files\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\animation\AnimationTrack.h">
+      <Filter>Header Files\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\animation\Keyframe.h">
+      <Filter>Header Files\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\animation\KeyframeSequence.h">
+      <Filter>Header Files\animation</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\include\slmath\float_util.inl">
+      <Filter>Header Files\slmath</Filter>
+    </None>
+    <None Include="..\..\include\slmath\mat4.inl">
+      <Filter>Header Files\slmath</Filter>
+    </None>
+    <None Include="..\..\include\slmath\quat.inl">
+      <Filter>Header Files\slmath</Filter>
+    </None>
+    <None Include="..\..\include\slmath\random.inl">
+      <Filter>Header Files\slmath</Filter>
+    </None>
+    <None Include="..\..\include\slmath\runtime_checks.inl">
+      <Filter>Header Files\slmath</Filter>
+    </None>
+    <None Include="..\..\include\slmath\vec2.inl">
+      <Filter>Header Files\slmath</Filter>
+    </None>
+    <None Include="..\..\include\slmath\vec3.inl">
+      <Filter>Header Files\slmath</Filter>
+    </None>
+    <None Include="..\..\include\slmath\vec4.inl">
+      <Filter>Header Files\slmath</Filter>
+    </None>
+    <None Include="..\..\include\core\Ref.inl">
+      <Filter>Header Files\core</Filter>
+    </None>
+    <None Include="..\..\include\animation\AnimationTrack.inl">
+      <Filter>Header Files\animation</Filter>
+    </None>
+    <None Include="..\..\include\animation\Keyframe.inl">
+      <Filter>Header Files\animation</Filter>
+    </None>
+    <None Include="..\..\include\animation\KeyframeSequence.inl">
+      <Filter>Header Files\animation</Filter>
+    </None>
+  </ItemGroup>
+</Project>
