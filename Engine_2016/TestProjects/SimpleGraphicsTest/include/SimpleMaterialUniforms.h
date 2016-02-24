@@ -1,11 +1,12 @@
-#ifndef SIMPLEMATERIALUNIFORMS_H
-#define SIMPLEMATERIALUNIFORMS_H
+#pragma once
 #include "graphics\Shader.h"
 #include "MyMaterials.h"
 
 class SimpleMaterialUniforms : public graphics::ShaderUniforms
 {
 public:
+
+
 	SimpleMaterialUniforms(graphics::Shader* shader, SharedShaderValues* sharedValues = 0) : ShaderUniforms(shader), m_globalShaderUniforms(new GlobalShaderUniforms(shader, sharedValues))
 	{
 		
@@ -15,6 +16,7 @@ public:
 	slmath::vec4 vAmbient; // Ambient color of the material (rgba)
 	slmath::vec4 vDiffuse; // Ambient color of the material (rgba)
 	slmath::vec4 vSpecular; // Specular color of the material (rgb). Specular exponent (a)
+	core::Ref<graphics::Texture>diffuseMap;
 
 	virtual void getUniformLocations(graphics::Shader* shader)
 	{
@@ -38,6 +40,38 @@ private:
 	GLint m_materialAmbientLoc;
 	GLint m_materialDiffuseLoc;
 	GLint m_materialSpecularLoc;
+
 };
 
-#endif
+class SimpleMaterialUniformsTextured : public SimpleMaterialUniforms
+{
+public:
+	core::Ref<graphics::Texture> diffuseMap;
+
+	SimpleMaterialUniformsTextured(graphics::Shader* shader, SharedShaderValues* sharedValues)
+		: SimpleMaterialUniforms(shader, sharedValues)
+	{
+	}
+
+	virtual ~SimpleMaterialUniformsTextured(){}
+
+	virtual void getUniformLocations(graphics::Shader* shader)
+	{
+		SimpleMaterialUniforms::getUniformLocations(shader);
+		m_diffuseMapLocation = glGetUniformLocation(shader->getProgram(), "s_diffuseMap");
+	}
+
+	virtual void bind(graphics::Shader* shader)
+	{
+		SimpleMaterialUniforms::bind(shader);
+		// bind diffuse texture to texture sampler unit #0
+		glActiveTexture(GL_TEXTURE0 + 0);
+		glBindTexture(GL_TEXTURE_2D, diffuseMap->getTextureId());
+
+		// Set sampler unit 0 to be used as sampler for diffuse map uniforms
+		glUniform1i(m_diffuseMapLocation, 0);
+	}
+
+private:
+	GLint m_diffuseMapLocation;
+};

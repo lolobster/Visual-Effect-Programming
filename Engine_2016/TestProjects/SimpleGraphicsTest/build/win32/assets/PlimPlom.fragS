@@ -22,7 +22,7 @@ varying vec3 g_vViewVecES;
 varying vec3 g_vNormalES;
 varying vec3 g_vLightVecES;
 
-varying vec2 g_texCoordOS; // coords are in Object Space
+varying vec2 g_texCoordsOS; // coords are in Object Space
 
 
 void main()
@@ -33,7 +33,7 @@ void main()
 	vec3 vView = normalize(g_vViewVecES);
 	vec3 vHalf = normalize(vLight + vView);
 
-	vec4 texelColor = texture2D(s_diffuseMap, g_texCoordOS);
+	vec4 texelColor = texture2D(s_diffuseMap, g_texCoordsOS);
 
 	float NdotL = saturate(dot(vNormal, vLight));
 	float NdotH = saturate(dot(vNormal, vHalf));
@@ -45,10 +45,10 @@ void main()
 	float SelfShadow = 4.0 * fDiffuse;
 
 	// Combine lighting with the material properties
-	//gl_FragColor.rgba = vec4(0.15, 0.15, 0.15, 0.15) * g_Material.vAmbient;
-	//gl_FragColor.rgba += g_Material.vDiffuse * fDiffuse;
-	//gl_FragColor.rgb += SelfShadow * vec3(0.15, 0.15, 0.15) * g_Material.vSpecular.xyz * fSpecular;
+	gl_FragColor.rgba = vec4(0.15, 0.15, 0.15, 0.15) * g_Material.vAmbient;
+	gl_FragColor.rgba += g_Material.vDiffuse * fDiffuse * texelColor;
+	gl_FragColor.rgb += SelfShadow * vec3(0.15, 0.15, 0.15) * g_Material.vSpecular.xyz * fSpecular;
 
-	gl_FragColor += g_Material.ambientColor * texelColor;
-	gl_FragColor += g_Material.diffuseColor * texelColor;
+	//gl_FragColor += g_Material.vDiffuse * texelColor * fDiffuse;
+	//gl_FragColor += fDiffuse * texelColor;
 }

@@ -16,27 +16,34 @@ public:
 		LOG("PlimPlomScene construct");
 		checkOpenGL();
 		m_sharedValues.totalTime = 0.0f;
-		FRM_SHADER_ATTRIBUTE attributes[2] =
+		FRM_SHADER_ATTRIBUTE attributes[3] =
 		{
 			{ "g_vPositionOS", graphics::ATTRIB_POSITION },
-			{ "g_vNormalOS", graphics::ATTRIB_NORMAL }
+			{ "g_vNormalOS", graphics::ATTRIB_NORMAL },
+			{ "g_vTextureCoords", graphics::ATTRIB_UV }
 		};
 
 		core::Ref<graphics::Shader>shader =
 			new graphics::Shader("assets/PlimPlom.vs", "assets/PlimPlom.fragS",
 			attributes, sizeof(attributes) / sizeof(FRM_SHADER_ATTRIBUTE));
 
-		m_texture = new graphics::Texture2D(); 
-		m_image->loadFromTGA("assets/doge.tga");
-		m_texture->setData(m_image);
 
-		SimpleMaterialUniforms* simpleMaterialUniforms = new SimpleMaterialUniforms(shader, &m_sharedValues);
+		SimpleMaterialUniformsTextured* smut = new SimpleMaterialUniformsTextured(shader, &m_sharedValues);
 
 		// Material values for mesh
-		simpleMaterialUniforms->vAmbient = slmath::vec4(0.5f, 0.2f, 1.0f, 1.0f);
-		simpleMaterialUniforms->vDiffuse = slmath::vec4(0.5f, 0.2f, 1.0f, 1.0f);
-		simpleMaterialUniforms->vSpecular = slmath::vec4(1.0f, 1.0f, 1.0f, 5.0f);
-		m_material = simpleMaterialUniforms;
+		smut->vAmbient = slmath::vec4(0.5f, 0.2f, 1.0f, 1.0f);
+		smut->vDiffuse = slmath::vec4(1.0f, 1.0f, 1.0f, 1.0f);
+		smut->vSpecular = slmath::vec4(1.0f, 1.0f, 1.0f, 50.0f);
+		
+
+		m_image = graphics::Image::loadFromTGA("assets/doge.tga");
+		m_texture = new graphics::Texture2D();
+		m_texture->setData(m_image);
+
+
+		smut->diffuseMap = m_texture;
+		
+		m_material = smut;
 		// Create mesh
 		m_mesh = createTeapotMesh();
 	}
@@ -55,7 +62,10 @@ public:
 			graphics::ATTRIB_POSITION, (slmath::vec3*)TeapotData::positions, TeapotData::numVertices),
 
 			new graphics::VertexArrayImpl<slmath::vec3>(
-			graphics::ATTRIB_NORMAL, (slmath::vec3*)TeapotData::normals, TeapotData::numVertices)
+			graphics::ATTRIB_NORMAL, (slmath::vec3*)TeapotData::normals, TeapotData::numVertices),
+
+			new graphics::VertexArrayImpl<slmath::vec3>(
+			graphics::ATTRIB_UV, (slmath::vec3*)TeapotData::texCoords, TeapotData::numVertices)
 		};
 
 		// Create vertex buffer from vertex arrays

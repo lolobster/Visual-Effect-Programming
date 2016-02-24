@@ -22,6 +22,7 @@ class GlobalShaderUniforms :
 
 {
 public:
+
 	GlobalShaderUniforms(graphics::Shader* shader, const SharedShaderValues* shaderShaderValues) : ShaderUniforms(shader), m_shaderShaderValues(shaderShaderValues)
 	{
 	}
