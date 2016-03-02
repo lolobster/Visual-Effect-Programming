@@ -41,12 +41,12 @@ void changeCurrentScene(int index)
 	assert( index >= 0 && index<NUM_SCENES);
 	switch( index )
 	{
-	case 0: m_currentScene = new TriangleScene(); break;
+	case 5: m_currentScene = new TriangleScene(); break;
 	case 1: m_currentScene = new QuadScene(); break;
 	case 2: m_currentScene = new TestScene(); break;
 	case 3: m_currentScene = new SimpleMeshScene(); break;
 	case 4: m_currentScene = new PlimPlomScene(); break;
-	case 5: m_currentScene = new CubeReflectionScene(); break;
+	case 0: m_currentScene = new CubeReflectionScene(); break;
 	default:
 		break;
 	}

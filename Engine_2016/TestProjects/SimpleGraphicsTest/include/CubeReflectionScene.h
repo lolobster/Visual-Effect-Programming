@@ -27,6 +27,24 @@ public:
 			new graphics::Shader("assets/PlimPlomTexCube.vs", "assets/PlimPlomTexCube.fragS",
 			attributes, sizeof(attributes) / sizeof(FRM_SHADER_ATTRIBUTE));
 
+
+		SimpleMaterialUniformsTextured* smut = new SimpleMaterialUniformsTextured(shader, &m_sharedValues);
+
+		// Material values for mesh
+		smut->vAmbient = slmath::vec4(0.5f, 0.2f, 1.0f, 1.0f);
+		smut->vDiffuse = slmath::vec4(0.5f, 0.2f, 1.0f, 1.0f);
+		smut->vSpecular = slmath::vec4(1.0f, 1.0f, 1.0f, 5.0f);
+		
+
+		m_image = graphics::Image::loadFromTGA("assets/WoodDiffuse.tga");
+		m_texture = new graphics::Texture2D();
+		m_texture->setData(m_image);
+
+
+		smut->diffuseMap = m_texture;
+		
+		m_material = smut;	
+
 		// Load cube images
 		eastl::string name = "BedroomCubeMap";
 
@@ -41,26 +59,15 @@ public:
 		for (int i = 0; i < 6; i++)
 			cubeImages[i] = cubeImageRefs[i].ptr();
 
+		SimpleMaterialWithTextureUniformsCube* texCube = new SimpleMaterialWithTextureUniformsCube(shader, &m_sharedValues);
+
 		// create cube map and set data to it
 		core::Ref<graphics::TextureCube> cubeMap = new graphics::TextureCube();
+		texCube->cubeMap = cubeMap;
 		cubeMap->setData(cubeImages);
 
-		SimpleMaterialUniformsTextured* smut = new SimpleMaterialUniformsTextured(shader, &m_sharedValues);
+		checkOpenGL();
 
-		// Material values for mesh
-		smut->vAmbient = slmath::vec4(0.5f, 0.2f, 1.0f, 1.0f);
-		smut->vDiffuse = slmath::vec4(1.0f, 1.0f, 1.0f, 1.0f);
-		smut->vSpecular = slmath::vec4(1.0f, 1.0f, 1.0f, 50.0f);
-		
-
-		m_image = graphics::Image::loadFromTGA("assets/WoodDiffuse.tga");
-		m_texture = new graphics::Texture2D();
-		m_texture->setData(m_image);
-
-
-		smut->diffuseMap = m_texture;
-		
-		m_material = smut;	
 		// Create mesh
 		m_mesh = createTeapotMesh();
 	}
