@@ -53,6 +53,9 @@
     <ClInclude Include="..\..\include\SimpleMaterialUniforms.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\CubeReflectionScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="FullScreenQuad.vs">
@@ -74,6 +77,12 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="assets\PlimPlom.vs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="assets\PlimPlomTexCube.fragS">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="assets\PlimPlomTexCube.vs">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

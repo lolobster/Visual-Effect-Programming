@@ -11,10 +11,11 @@
 #include "TestScene.h"
 #include "SimpleMeshScene.h"
 #include "PlimPlomScene.h"
+#include "CubeReflectionScene.h"
 
 // Current scene and max num of scenes
 core::Ref<Scene> m_currentScene = 0;
-static const int NUM_SCENES = 5;
+static const int NUM_SCENES = 6;
 static int sceneIndex = 0; // Current scene index.
 
 // Initialize engine globals (memory manager)
@@ -40,11 +41,12 @@ void changeCurrentScene(int index)
 	assert( index >= 0 && index<NUM_SCENES);
 	switch( index )
 	{
-	case 0: m_currentScene = new PlimPlomScene(); break;
+	case 0: m_currentScene = new TriangleScene(); break;
 	case 1: m_currentScene = new QuadScene(); break;
 	case 2: m_currentScene = new TestScene(); break;
 	case 3: m_currentScene = new SimpleMeshScene(); break;
-	case 4: m_currentScene = new TriangleScene(); break;
+	case 4: m_currentScene = new PlimPlomScene(); break;
+	case 5: m_currentScene = new CubeReflectionScene(); break;
 	default:
 		break;
 	}

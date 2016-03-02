@@ -75,3 +75,34 @@ public:
 private:
 	GLint m_diffuseMapLocation;
 };
+
+class SimpleMaterialWithTextureUniformsCube : public SimpleMaterialUniformsTextured
+{
+public:
+	core::Ref<graphics::TextureCube> cubeMap;
+
+	SimpleMaterialWithTextureUniformsCube(graphics::Shader* shader, SharedShaderValues* sharedValues)
+		: SimpleMaterialUniformsTextured(shader, sharedValues)
+	{
+	}
+
+	virtual ~SimpleMaterialWithTextureUniformsCube(){}
+
+	virtual void getUniformLocations(graphics::Shader* shader)
+	{
+		SimpleMaterialUniformsTextured::getUniformLocations(shader);
+		m_cubeMapLoc = glGetUniformLocation(shader->getProgram(), "s_cubeMap");
+	}
+
+	virtual void bind(graphics::Shader* shader)
+	{
+		SimpleMaterialUniformsTextured::bind(shader);
+
+		// bind cube texture to texture sampler unit #1
+		glActiveTexture(GL_TEXTURE0 + 1);
+		glBindTexture(GL_TEXTURE_CUBE_MAP, cubeMap->getTextureId());
+	}
+
+private:
+	GLint m_cubeMapLoc;
+};

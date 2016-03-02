@@ -95,6 +95,7 @@
     <ClCompile Include="..\..\src\teapot.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\CubeReflectionScene.h" />
     <ClInclude Include="..\..\include\MyMaterials.h" />
     <ClInclude Include="..\..\include\PlimPlomScene.h" />
     <ClInclude Include="..\..\include\QuadScene.h" />
@@ -114,6 +115,8 @@
     <None Include="assets\PlasmaEffect.fragmentS" />
     <None Include="assets\PlimPlom.fragS" />
     <None Include="assets\PlimPlom.vs" />
+    <None Include="assets\PlimPlomTexCube.fragS" />
+    <None Include="assets\PlimPlomTexCube.vs" />
     <None Include="assets\Simple3D.vs" />
     <None Include="assets\Simple3D.fragS" />
     <None Include="FullScreenQuad.vs" />

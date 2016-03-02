@@ -1,5 +1,5 @@
-#ifndef PlimPlomScene_H
-#define PlimPlomScene_H
+#ifndef CubeReflectionScene_h
+#define CubeReflectionScene_h
 #include "scene.h"
 #include "MyMaterials.h"
 #include "SimpleMaterialUniforms.h"
@@ -8,10 +8,10 @@
 #include "graphics\Image.h"
 #include "graphics\Mesh.h"
 
-class PlimPlomScene : public Scene
+class CubeReflectionScene : public Scene
 {
 public:
-	PlimPlomScene()
+	CubeReflectionScene()
 	{
 		LOG("PlimPlomScene construct");
 		checkOpenGL();
@@ -24,9 +24,26 @@ public:
 		};
 
 		core::Ref<graphics::Shader>shader =
-			new graphics::Shader("assets/PlimPlom.vs", "assets/PlimPlom.fragS",
+			new graphics::Shader("assets/PlimPlomTexCube.vs", "assets/PlimPlomTexCube.fragS",
 			attributes, sizeof(attributes) / sizeof(FRM_SHADER_ATTRIBUTE));
 
+		// Load cube images
+		eastl::string name = "BedroomCubeMap";
+
+		cubeImageRefs[0] = graphics::Image::loadFromTGA("assets/" + name + "_RT.tga");
+		cubeImageRefs[1] = graphics::Image::loadFromTGA("assets/" + name + "_LF.tga");
+		cubeImageRefs[2] = graphics::Image::loadFromTGA("assets/" + name + "_DN.tga");
+		cubeImageRefs[3] = graphics::Image::loadFromTGA("assets/" + name + "_UP.tga");
+		cubeImageRefs[4] = graphics::Image::loadFromTGA("assets/" + name + "_FR.tga");
+		cubeImageRefs[5] = graphics::Image::loadFromTGA("assets/" + name + "_BK.tga");
+
+		graphics::Image* cubeImages[6];
+		for (int i = 0; i < 6; i++)
+			cubeImages[i] = cubeImageRefs[i].ptr();
+
+		// create cube map and set data to it
+		core::Ref<graphics::TextureCube> cubeMap = new graphics::TextureCube();
+		cubeMap->setData(cubeImages);
 
 		SimpleMaterialUniformsTextured* smut = new SimpleMaterialUniformsTextured(shader, &m_sharedValues);
 
@@ -48,7 +65,7 @@ public:
 		m_mesh = createTeapotMesh();
 	}
 
-	~PlimPlomScene(){};
+	~CubeReflectionScene(){};
 
 	graphics::Mesh* createTeapotMesh()
 	{
@@ -155,6 +172,8 @@ private:
 	slmath::mat4 m_matProjection;
 	slmath::mat4 m_matView;
 	slmath::mat4 m_matModel;
+
+	core::Ref<graphics::Image>cubeImageRefs[6];
 };
 
 #endif
