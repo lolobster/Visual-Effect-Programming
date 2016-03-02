@@ -99,6 +99,7 @@
     <ClInclude Include="..\..\include\MyMaterials.h" />
     <ClInclude Include="..\..\include\PlimPlomScene.h" />
     <ClInclude Include="..\..\include\QuadScene.h" />
+    <ClInclude Include="..\..\include\RenderTextureScene.h" />
     <ClInclude Include="..\..\include\scene.h" />
     <ClInclude Include="..\..\include\SimpleMaterialUniforms.h" />
     <ClInclude Include="..\..\include\teapot.h" />

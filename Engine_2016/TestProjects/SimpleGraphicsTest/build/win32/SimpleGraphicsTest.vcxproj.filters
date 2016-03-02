@@ -56,6 +56,9 @@
     <ClInclude Include="..\..\include\CubeReflectionScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\RenderTextureScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="FullScreenQuad.vs">
