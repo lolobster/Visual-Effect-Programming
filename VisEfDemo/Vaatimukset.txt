@@ -1,0 +1,22 @@
+Tässä MINIMI vaatimukset palautettavalle työlle:
+* 3D Grafiikka demo
+* min 3 Erilaista materiaalia tyyliin (voi olla myös "kovempia tekniikoita", mutta minimissään nämä):
+   - bling phong shading with 1 textures
+   - normal/bump mapped object
+* Dokumentaatio/blogi (lyhyt kuvaus demossa käytetyistä tekniikoista)
+
+
+Noilla siis saa minimissään arvosanan 1. Tuosta sitten saa korotettua sitä arvosanaa esim. näillä vaihtoehdoilla:
+* Assyjen Demokomboon osallistumminen
+     - Jos joku pääsee big screenille, ni lähes varma vitonen
+* Demo sisältää Image effuja
+* Edistyneempien renderöintitekoiden käyttö (esim. cobe reflection, raymarching, phys based shading tms.)
+* Jos työstä näkee, että siihen on todella panostettu (koodi ja tuotos)
+
+Tällaista siis teillä pitää toimittaa mulle (project deliverables):
+* ZIP-paketti, joka sisältää seuraavat kansiot:
+  - bin = sisältää demon exe file ja tarvittavat assetit.
+  - doc = sisältää pdf-dokumentaation tai pdf:n printattuna blogista
+  - shaders = tänne kansioon kopiot shaderien koodeista
+
+DEADLINE on joko 31.5 tai 1.9, oman valintanne mukaan.
