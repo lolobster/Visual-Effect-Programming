@@ -24,7 +24,7 @@ using namespace std;
 #include "lodepng.h"
 
 // Properties
-GLuint screenWidth = 800, screenHeight = 600;
+GLuint screenWidth = 900, screenHeight = 800;
 
 // Function prototypes
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
@@ -197,8 +197,10 @@ int main()
     glBindVertexArray(0);
 
     // Load textures
-    GLuint cubeTexture = loadTexture("../resource/textures/176.png");
+    GLuint cubeDiffuse = loadTexture("../resource/textures/176.png");
     GLuint cubeNormal = loadTexture("../resource/textures/176_norm.png");
+    glUniform1i(glGetUniformLocation(NMShader.Program, "cubeDiffuse"), 1);
+    glUniform1i(glGetUniformLocation(NMShader.Program, "cubeNormal"), 2);
 
 #pragma endregion
 
@@ -214,6 +216,8 @@ int main()
 
     // Load nanosuit using our model loader
     Model nanosuit("../resource/EM/EM-208.obj");
+
+    glm::vec3 lightPos(0.0f, 3.0f, 3.5f);
 
     // Draw as wireframe
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -234,6 +238,7 @@ int main()
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+        /////////////////////////////////////////////////////////////////////////
         // Draw skybox as first
         glDepthMask(GL_FALSE);
         skyboxShader.Use();
@@ -251,31 +256,46 @@ int main()
         glBindVertexArray(0);
         glDepthMask(GL_TRUE);
         //glDepthFunc(GL_LESS); // Set depth function back to default
+        /////////////////////////////////////////////////////////////////////////
 
         // Draw scene as normal
         NMShader.Use();
         glm::mat4 model;
-        view = camera.GetViewMatrix();	
-        glUniformMatrix4fv(glGetUniformLocation(NMShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        // Rotate cube
+        model = glm::translate(model, glm::vec3(3, 3, 0));
+        model = glm::rotate(model, (GLfloat)glfwGetTime() * -2, glm::normalize(glm::vec3(1.0, 0.0, 1.0)));
+        view = camera.GetViewMatrix();
+        projection = glm::perspective(camera.Zoom, (float)screenWidth / (float)screenHeight, 0.1f, 100.0f);
         glUniformMatrix4fv(glGetUniformLocation(NMShader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(glGetUniformLocation(NMShader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
-        // Cubes
+        // Render Cube
+        glUniformMatrix4fv(glGetUniformLocation(NMShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        glUniform3fv(glGetUniformLocation(NMShader.Program, "lightPos"), 1, &lightPos[0]);
+        glUniform3fv(glGetUniformLocation(NMShader.Program, "viewPos"), 1, &camera.Position[0]);
         glBindVertexArray(cubeVAO); // TODO tee heijastavaksi ja seinät takasi näkyviin
-        glActiveTexture(GL_TEXTURE1);
-        glUniform1i(glGetUniformLocation(NMShader.Program, "texture_diffuse1"), 0);
         // Diffuse texture
-        glActiveTexture(GL_TEXTURE1);
-        glBindTexture(GL_TEXTURE_2D, cubeTexture);
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, cubeDiffuse);
         // Normal map texture
-        glActiveTexture(GL_TEXTURE2);
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, cubeNormal);
         glDrawArrays(GL_TRIANGLES, 0, 36);
         glBindVertexArray(0);			
 
-        // Draw robot model
-        shader.Use();
+        // Draw light source
+        model = glm::mat4();
+        model = glm::translate(model, lightPos);
+        model = glm::scale(model, glm::vec3(0.1f));
+        glUniformMatrix4fv(glGetUniformLocation(NMShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
         nanosuit.Draw(shader);
 
-
+        // Draw robot model
+        shader.Use();
+        model = glm::mat4();
+        glUniformMatrix4fv(glGetUniformLocation(NMShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        glUniform3fv(glGetUniformLocation(NMShader.Program, "lightPos"), 1, &lightPos[0]);
+        glUniform3fv(glGetUniformLocation(NMShader.Program, "viewPos"), 1, &camera.Position[0]);
+        nanosuit.Draw(shader);
 
 
         // Swap the buffers
