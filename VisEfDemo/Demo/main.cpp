@@ -87,45 +87,45 @@ int main()
      GLfloat cubeVertices[] = {
          // Positions          // Normals
          -0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f,
-         0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f,
-         0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f,
-         0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f,
-         -0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f,
+          0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f,
+          0.5f,  0.5f, -0.5f, 0.0f, 0.0f, -1.0f,
+          0.5f,  0.5f, -0.5f, 0.0f, 0.0f, -1.0f,
+         -0.5f,  0.5f, -0.5f, 0.0f, 0.0f, -1.0f,
          -0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f,
 
          -0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f,
-         0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f,
-         0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f,
-         0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f,
-         -0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f,
+          0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f,
+          0.5f,  0.5f, 0.5f, 0.0f, 0.0f, 1.0f,
+          0.5f,  0.5f, 0.5f, 0.0f, 0.0f, 1.0f,
+         -0.5f,  0.5f, 0.5f, 0.0f, 0.0f, 1.0f,
          -0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f,
 
-         -0.5f, 0.5f, 0.5f, -1.0f, 0.0f, 0.0f,
-         -0.5f, 0.5f, -0.5f, -1.0f, 0.0f, 0.0f,
+         -0.5f,  0.5f,  0.5f, -1.0f, 0.0f, 0.0f,
+         -0.5f,  0.5f, -0.5f, -1.0f, 0.0f, 0.0f,
          -0.5f, -0.5f, -0.5f, -1.0f, 0.0f, 0.0f,
          -0.5f, -0.5f, -0.5f, -1.0f, 0.0f, 0.0f,
-         -0.5f, -0.5f, 0.5f, -1.0f, 0.0f, 0.0f,
-         -0.5f, 0.5f, 0.5f, -1.0f, 0.0f, 0.0f,
+         -0.5f, -0.5f,  0.5f, -1.0f, 0.0f, 0.0f,
+         -0.5f,  0.5f,  0.5f, -1.0f, 0.0f, 0.0f,
 
-         0.5f, 0.5f, 0.5f, 1.0f, 0.0f, 0.0f,
-         0.5f, 0.5f, -0.5f, 1.0f, 0.0f, 0.0f,
+         0.5f,  0.5f,  0.5f, 1.0f, 0.0f, 0.0f,
+         0.5f,  0.5f, -0.5f, 1.0f, 0.0f, 0.0f,
          0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f,
          0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f,
-         0.5f, -0.5f, 0.5f, 1.0f, 0.0f, 0.0f,
-         0.5f, 0.5f, 0.5f, 1.0f, 0.0f, 0.0f,
+         0.5f, -0.5f,  0.5f, 1.0f, 0.0f, 0.0f,
+         0.5f,  0.5f,  0.5f, 1.0f, 0.0f, 0.0f,
 
          -0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f,
-         0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f,
-         0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f,
-         0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f,
-         -0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f,
+          0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f,
+          0.5f, -0.5f,  0.5f, 0.0f, -1.0f, 0.0f,
+          0.5f, -0.5f,  0.5f, 0.0f, -1.0f, 0.0f,
+         -0.5f, -0.5f,  0.5f, 0.0f, -1.0f, 0.0f,
          -0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f,
 
          -0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f,
-         0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f,
-         0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f,
-         0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f,
-         -0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f,
+          0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f,
+          0.5f, 0.5f,  0.5f, 0.0f, 1.0f, 0.0f,
+          0.5f, 0.5f,  0.5f, 0.0f, 1.0f, 0.0f,
+         -0.5f, 0.5f,  0.5f, 0.0f, 1.0f, 0.0f,
          -0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f
     };
     GLfloat skyboxVertices[] = {
@@ -181,10 +181,11 @@ int main()
     glBindBuffer(GL_ARRAY_BUFFER, cubeVBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(cubeVertices), &cubeVertices, GL_STATIC_DRAW);
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (GLvoid*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (GLvoid*)0);
     glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (GLvoid*)(3 * sizeof(GLfloat)));
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (GLvoid*)(3 * sizeof(GLfloat)));
     glBindVertexArray(0);
+
     // Setup skybox VAO
     GLuint skyboxVAO, skyboxVBO;
     glGenVertexArrays(1, &skyboxVAO);
@@ -248,7 +249,7 @@ int main()
         // Render Cube
         // Rotate cube
         model = glm::translate(model, glm::vec3(3, 3, 0));
-        model = glm::rotate(model, (GLfloat)glfwGetTime() * -2, glm::normalize(glm::vec3(1.0, 0.0, 1.0)));
+        model = glm::rotate(model, (GLfloat)glfwGetTime() * -0.5f, glm::normalize(glm::vec3(1.0, 0.0, 1.0)));
         view = camera.GetViewMatrix();
         projection = glm::perspective(camera.Zoom, (float)screenWidth / (float)screenHeight, 0.1f, 100.0f);
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
