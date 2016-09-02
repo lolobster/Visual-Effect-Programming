@@ -215,8 +215,8 @@ int main()
     faces.push_back("../resource/skybox/cove/cove_ft.png");
     GLuint skyboxTexture = loadCubemap(faces);
 
-    // Load nanosuit using our model loader
-    Model nanosuit("../resource/EM/EM-208.obj");
+    // Load robot using our model loader
+    Model robot("../resource/EM/EM-208.obj");
 
     glm::vec3 lightPos(1.0f, 3.0f, 3.5f);
 
@@ -248,7 +248,7 @@ int main()
         /////////////////////////////////////////////////////////////////////////////
         // Render Cube
         // Rotate cube
-        model = glm::translate(model, glm::vec3(3, 3, 0));
+        model = glm::translate(model, glm::vec3(2, 3, 0));
         model = glm::rotate(model, (GLfloat)glfwGetTime() * -0.5f, glm::normalize(glm::vec3(1.0, 0.0, 1.0)));
         view = camera.GetViewMatrix();
         projection = glm::perspective(camera.Zoom, (float)screenWidth / (float)screenHeight, 0.1f, 100.0f);
@@ -269,19 +269,21 @@ int main()
         glBindVertexArray(0);			
         /////////////////////////////////////////////////////////////////////////////
         // Draw robot model
-        //shader.Use();
-        //model = glm::mat4();
-        //glUniformMatrix4fv(glGetUniformLocation(NMShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-        //glUniform3fv(glGetUniformLocation(NMShader.Program, "lightPos"), 1, &lightPos[0]);
-        //glUniform3fv(glGetUniformLocation(NMShader.Program, "viewPos"), 1, &camera.Position[0]);
-        //nanosuit.Draw(shader);
+        NMShader.Use();
+        model = glm::mat4();
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
+        glUniform3fv(glGetUniformLocation(shader.Program, "lightPos"), 1, &lightPos[0]);
+        glUniform3fv(glGetUniformLocation(shader.Program, "viewPos"), 1, &camera.Position[0]);
+        robot.Draw(NMShader);
 
         //// Draw light source
-        //model = glm::mat4();
-        //model = glm::translate(model, lightPos);
-        //model = glm::scale(model, glm::vec3(0.1f));
-        //glUniformMatrix4fv(glGetUniformLocation(NMShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-        //nanosuit.Draw(shader);
+        model = glm::mat4();
+        model = glm::translate(model, lightPos);
+        model = glm::scale(model, glm::vec3(0.1f));
+        glUniformMatrix4fv(glGetUniformLocation(NMShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        robot.Draw(NMShader);
 
         /////////////////////////////////////////////////////////////////////////
         // Draw skybox as first
