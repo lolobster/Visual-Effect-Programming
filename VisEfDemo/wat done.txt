@@ -1,0 +1,11 @@
+- skybox
+	- paikallaan suhteessa kameraan
+
+- teksturoitu model
+	- tekstuurit paskana
+	- normal toimii?
+
+- blinn-phong
+
+- cube mapping
+	- rikki

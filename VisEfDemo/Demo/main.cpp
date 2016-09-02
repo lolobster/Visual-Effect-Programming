@@ -85,48 +85,48 @@ int main()
 #pragma region "object_initialization"
     // Set the object data (buffers, vertex attributes)
      GLfloat cubeVertices[] = {
-        // Positions          // Texture Coords
-        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-         0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
-         0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-         0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+         // Positions          // Normals
+         -0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f,
+         0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f,
+         0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f,
+         0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f,
+         -0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f,
+         -0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f,
 
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-         0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-         0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-         0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-        -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+         -0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f,
+         0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f,
+         0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f,
+         0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f,
+         -0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f,
+         -0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f,
 
-        -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-        -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-        -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+         -0.5f, 0.5f, 0.5f, -1.0f, 0.0f, 0.0f,
+         -0.5f, 0.5f, -0.5f, -1.0f, 0.0f, 0.0f,
+         -0.5f, -0.5f, -0.5f, -1.0f, 0.0f, 0.0f,
+         -0.5f, -0.5f, -0.5f, -1.0f, 0.0f, 0.0f,
+         -0.5f, -0.5f, 0.5f, -1.0f, 0.0f, 0.0f,
+         -0.5f, 0.5f, 0.5f, -1.0f, 0.0f, 0.0f,
 
-         0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-         0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-         0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-         0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-         0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-         0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+         0.5f, 0.5f, 0.5f, 1.0f, 0.0f, 0.0f,
+         0.5f, 0.5f, -0.5f, 1.0f, 0.0f, 0.0f,
+         0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f,
+         0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f,
+         0.5f, -0.5f, 0.5f, 1.0f, 0.0f, 0.0f,
+         0.5f, 0.5f, 0.5f, 1.0f, 0.0f, 0.0f,
 
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-         0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
-         0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-         0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+         -0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f,
+         0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f,
+         0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f,
+         0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f,
+         -0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f,
+         -0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f,
 
-        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-         0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-         0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-         0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-        -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
-        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
+         -0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f,
+         0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f,
+         0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f,
+         0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f,
+         -0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f,
+         -0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f
     };
     GLfloat skyboxVertices[] = {
         // Positions          
@@ -183,7 +183,7 @@ int main()
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (GLvoid*)0);
     glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (GLvoid*)(3 * sizeof(GLfloat)));
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (GLvoid*)(3 * sizeof(GLfloat)));
     glBindVertexArray(0);
     // Setup skybox VAO
     GLuint skyboxVAO, skyboxVBO;
@@ -197,10 +197,10 @@ int main()
     glBindVertexArray(0);
 
     // Load textures
-    GLuint cubeDiffuse = loadTexture("../resource/textures/176.png");
-    GLuint cubeNormal = loadTexture("../resource/textures/176_norm.png");
-    glUniform1i(glGetUniformLocation(NMShader.Program, "cubeDiffuse"), 1);
-    glUniform1i(glGetUniformLocation(NMShader.Program, "cubeNormal"), 2);
+    //GLuint cubeDiffuse = loadTexture("../resource/textures/176.png");
+    //GLuint cubeNormal = loadTexture("../resource/textures/176_norm.png");
+    //glUniform1i(glGetUniformLocation(NMShader.Program, "cubeDiffuse"), 1);
+    //glUniform1i(glGetUniformLocation(NMShader.Program, "cubeNormal"), 2);
 
 #pragma endregion
 
@@ -217,7 +217,7 @@ int main()
     // Load nanosuit using our model loader
     Model nanosuit("../resource/EM/EM-208.obj");
 
-    glm::vec3 lightPos(0.0f, 3.0f, 3.5f);
+    glm::vec3 lightPos(1.0f, 3.0f, 3.5f);
 
     // Draw as wireframe
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -238,65 +238,69 @@ int main()
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        /////////////////////////////////////////////////////////////////////////
-        // Draw skybox as first
-        glDepthMask(GL_FALSE);
-        skyboxShader.Use();
-        //glDepthFunc(GL_LEQUAL);  // Change depth function so depth test passes when values are equal to depth buffer's content
-        glm::mat4 view = glm::mat4(glm::mat3(camera.GetViewMatrix()));	// Remove any translation component of the view matrix
-        glm::mat4 projection = glm::perspective(camera.Zoom, (float)screenWidth / (float)screenHeight, 0.1f, 100.0f);
-        glUniformMatrix4fv(glGetUniformLocation(skyboxShader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
-        glUniformMatrix4fv(glGetUniformLocation(skyboxShader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
-        // skybox cube
-        glBindVertexArray(skyboxVAO);
-        glActiveTexture(GL_TEXTURE0);
-        glUniform1i(glGetUniformLocation(shader.Program, "skybox"), 0);
-        glBindTexture(GL_TEXTURE_CUBE_MAP, skyboxTexture);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
-        glBindVertexArray(0);
-        glDepthMask(GL_TRUE);
-        //glDepthFunc(GL_LESS); // Set depth function back to default
-        /////////////////////////////////////////////////////////////////////////
-
         // Draw scene as normal
-        NMShader.Use();
+        shader.Use();
         glm::mat4 model;
+        glm::mat4 view;
+        glm::mat4 projection;
+        
+        /////////////////////////////////////////////////////////////////////////////
+        // Render Cube
         // Rotate cube
         model = glm::translate(model, glm::vec3(3, 3, 0));
         model = glm::rotate(model, (GLfloat)glfwGetTime() * -2, glm::normalize(glm::vec3(1.0, 0.0, 1.0)));
         view = camera.GetViewMatrix();
         projection = glm::perspective(camera.Zoom, (float)screenWidth / (float)screenHeight, 0.1f, 100.0f);
-        glUniformMatrix4fv(glGetUniformLocation(NMShader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
-        glUniformMatrix4fv(glGetUniformLocation(NMShader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
-        // Render Cube
-        glUniformMatrix4fv(glGetUniformLocation(NMShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-        glUniform3fv(glGetUniformLocation(NMShader.Program, "lightPos"), 1, &lightPos[0]);
-        glUniform3fv(glGetUniformLocation(NMShader.Program, "viewPos"), 1, &camera.Position[0]);
-        glBindVertexArray(cubeVAO); // TODO tee heijastavaksi ja seinät takasi näkyviin
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
+        //glUniform3fv(glGetUniformLocation(shader.Program, "lightPos"), 1, &lightPos[0]);
+        glUniform3f(glGetUniformLocation(shader.Program, "cameraPos"), camera.Position.x, camera.Position.y, camera.Position.z);
+        glBindVertexArray(cubeVAO); // TODO tee heijastavaksi/tekstuurit toimimaan
         // Diffuse texture
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, cubeDiffuse);
+        //glActiveTexture(GL_TEXTURE0);
+        //glUniform1i(glGetUniformLocation(shader.Program, "texture_diffuse1"), 0);
+        glBindTexture(GL_TEXTURE_CUBE_MAP, skyboxTexture);
         // Normal map texture
-        glActiveTexture(GL_TEXTURE1);
-        glBindTexture(GL_TEXTURE_2D, cubeNormal);
+        //glActiveTexture(GL_TEXTURE1);
+        //glBindTexture(GL_TEXTURE_2D, cubeNormal);
         glDrawArrays(GL_TRIANGLES, 0, 36);
         glBindVertexArray(0);			
-
-        // Draw light source
-        model = glm::mat4();
-        model = glm::translate(model, lightPos);
-        model = glm::scale(model, glm::vec3(0.1f));
-        glUniformMatrix4fv(glGetUniformLocation(NMShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-        nanosuit.Draw(shader);
-
+        /////////////////////////////////////////////////////////////////////////////
         // Draw robot model
-        shader.Use();
-        model = glm::mat4();
-        glUniformMatrix4fv(glGetUniformLocation(NMShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-        glUniform3fv(glGetUniformLocation(NMShader.Program, "lightPos"), 1, &lightPos[0]);
-        glUniform3fv(glGetUniformLocation(NMShader.Program, "viewPos"), 1, &camera.Position[0]);
-        nanosuit.Draw(shader);
+        //shader.Use();
+        //model = glm::mat4();
+        //glUniformMatrix4fv(glGetUniformLocation(NMShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        //glUniform3fv(glGetUniformLocation(NMShader.Program, "lightPos"), 1, &lightPos[0]);
+        //glUniform3fv(glGetUniformLocation(NMShader.Program, "viewPos"), 1, &camera.Position[0]);
+        //nanosuit.Draw(shader);
 
+        //// Draw light source
+        //model = glm::mat4();
+        //model = glm::translate(model, lightPos);
+        //model = glm::scale(model, glm::vec3(0.1f));
+        //glUniformMatrix4fv(glGetUniformLocation(NMShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        //nanosuit.Draw(shader);
+
+        /////////////////////////////////////////////////////////////////////////
+        // Draw skybox as first
+        //glDepthMask(GL_FALSE);
+        glDepthFunc(GL_LEQUAL);  // Change depth function so depth test passes when values are equal to depth buffer's content
+        skyboxShader.Use();
+        view = glm::mat4(glm::mat3(camera.GetViewMatrix()));	// Remove any translation component of the view matrix
+        //projection = glm::perspective(camera.Zoom, (float)screenWidth / (float)screenHeight, 0.1f, 100.0f);
+        glUniformMatrix4fv(glGetUniformLocation(skyboxShader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
+        glUniformMatrix4fv(glGetUniformLocation(skyboxShader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
+        // skybox cube
+        glBindVertexArray(skyboxVAO);
+        //glActiveTexture(GL_TEXTURE0);
+        //glUniform1i(glGetUniformLocation(shader.Program, "skybox"), 0);
+        glBindTexture(GL_TEXTURE_CUBE_MAP, skyboxTexture);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+        glBindVertexArray(0);
+        //glDepthMask(GL_TRUE);
+        glDepthFunc(GL_LESS); // Set depth function back to default
+        /////////////////////////////////////////////////////////////////////////
 
         // Swap the buffers
         glfwSwapBuffers(window);
@@ -366,7 +370,7 @@ GLuint loadTexture(GLchar* path)
     }
     // Assign texture to ID
     glBindTexture(GL_TEXTURE_2D, textureID);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, &image[0]);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, &image[0]);
     glGenerateMipmap(GL_TEXTURE_2D);
 
     // Parameters
@@ -374,8 +378,9 @@ GLuint loadTexture(GLchar* path)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glBindTexture(GL_TEXTURE_2D, 0);
+    glBindTexture(GL_TEXTURE_2D, textureID);
     image.clear();
+
     return textureID;
 }
 
