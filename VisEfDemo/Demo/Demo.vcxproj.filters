@@ -24,24 +24,24 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="lodepng.cpp">
+    <ClCompile Include="..\include\common\lodePNG\lodepng.cpp">
       <Filter>LodePNG</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="lodepng.h">
+    <ClInclude Include="..\include\common\lodePNG\lodepng.h">
       <Filter>LodePNG</Filter>
     </ClInclude>
-    <ClInclude Include="Shader.h">
+    <ClInclude Include="..\include\common\Camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Mesh.h">
+    <ClInclude Include="..\include\common\Mesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Model.h">
+    <ClInclude Include="..\include\common\Model.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Camera.h">
+    <ClInclude Include="..\include\common\Shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -62,6 +62,12 @@
       <Filter>Shaders</Filter>
     </None>
     <None Include="..\resource\shaders\NMShader.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\resource\shaders\modelShader.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\resource\shaders\modelShader.frag">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>

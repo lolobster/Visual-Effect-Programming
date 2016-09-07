@@ -11,7 +11,7 @@ using namespace std;
 #include <GL/glew.h> // Contains all the necessery OpenGL includes
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include "lodepng.h"
+#include <common/lodePNG/lodepng.h>
 #include <../assimp/include/assimp/Importer.hpp>
 #include <../assimp/include/assimp/scene.h>
 #include <../assimp/include/assimp/postprocess.h>

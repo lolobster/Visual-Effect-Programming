@@ -113,7 +113,8 @@ public:
 		if (!success)
 		{
 			glGetProgramInfoLog(this->Program, 512, NULL, infoLog); //returns the information log for a program object
-			std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
+			std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl
+                << vertexPath << std::endl;
 		}
 		glDeleteShader(vertexShader); //removes the given shader object, cleaning all allocated memory
 		glDeleteShader(fragmentShader); //removes the given shader object, cleaning all allocated memory
