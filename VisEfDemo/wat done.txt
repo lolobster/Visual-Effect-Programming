@@ -8,4 +8,4 @@
 - blinn-phong
 
 - cube mapping
-	- rikki
+	- pyörivä kuutio heijastaa skyboxia

@@ -133,6 +133,50 @@ int main()
          -0.5f, 0.5f,  0.5f, 0.0f, 1.0f, 0.0f,
          -0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f
     };
+     GLfloat modelCube[] = {
+         // Positions          // Normals           // Texture Coords
+         -0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f,
+         0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f,
+         0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 1.0f,
+         0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 1.0f,
+         -0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f,
+         -0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f,
+
+         -0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
+         0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
+         0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
+         0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
+         -0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
+         -0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
+
+         -0.5f, 0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+         -0.5f, 0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 1.0f, 1.0f,
+         -0.5f, -0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
+         -0.5f, -0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
+         -0.5f, -0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
+         -0.5f, 0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+
+         0.5f, 0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+         0.5f, 0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f,
+         0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
+         0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
+         0.5f, -0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
+         0.5f, 0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+
+         -0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f,
+         0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 1.0f, 1.0f,
+         0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f,
+         0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f,
+         -0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f,
+         -0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f,
+
+         -0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
+         0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
+         0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
+         0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
+         -0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
+         -0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f
+     };
     GLfloat skyboxVertices[] = {
         // Positions          
         -50.0f,  50.0f, -50.0f,
@@ -177,6 +221,62 @@ int main()
         -50.0f, -50.0f,  50.0f,
          50.0f, -50.0f,  50.0f
     };
+
+    // Load textures
+    //NMShader.Use();
+    //GLuint cubeDiffuse = loadTexture("../resource/textures/176.png");
+    //GLuint cubeNormal = loadTexture("../resource/textures/176_norm.png");
+    //glUniform1i(glGetUniformLocation(NMShader.Program, "cubeDiffuse"), 1);
+    //glUniform1i(glGetUniformLocation(NMShader.Program, "cubeNormal"), 2);
+
+#pragma endregion
+
+    // Cubemap (Skybox)
+    vector<const GLchar*> faces;
+    faces.push_back("../resource/skybox/cove/cove_rt.png");
+    faces.push_back("../resource/skybox/cove/cove_lf.png");
+    faces.push_back("../resource/skybox/cove/cove_up.png");
+    faces.push_back("../resource/skybox/cove/cove_dn.png");
+    faces.push_back("../resource/skybox/cove/cove_bk.png");
+    faces.push_back("../resource/skybox/cove/cove_ft.png");
+    GLuint skyboxTexture = loadCubemap(faces);
+    //GLuint cubeDiffuse = loadTexture("../resource/textures/176.png");
+    //GLuint cubeNormal = loadTexture("../resource/textures/176_norm.png");
+    GLuint cubeDiffuse = loadTexture("../resource/textures/container_D.png");
+    GLuint cubeSpecular = loadTexture("../resource/textures/container_S.png");
+    
+   // modelShader.Use();
+
+    //GLint vertex = glGetAttribLocation(modelShader.Program, "vertex");
+    //GLint normal = glGetAttribLocation(modelShader.Program, "normal");
+    //GLint texcoord = glGetAttribLocation(modelShader.Program, "texcoord");
+    //GLint tangent = glGetAttribLocation(modelShader.Program, "_tangent");
+    //GLint bitangent = glGetAttribLocation(modelShader.Program, "_bitangent");
+    //GLint _normal = glGetAttribLocation(modelShader.Program, "_normal");
+    //GLint posIndex = 0;
+    //GLint texCoordIndex = 1;
+    //glBindAttribLocation(modelShader.Program, posIndex, "in_Position");
+    //glBindAttribLocation(modelShader.Program, texCoordIndex, "in_TexCoord");
+
+    //GLint flag = glGetUniformLocation(modelShader.Program, "flag");
+
+    // Model cube
+    GLuint VBO, containerVAO;
+    glGenVertexArrays(1, &containerVAO);
+    glGenBuffers(1, &VBO);
+
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(modelCube), modelCube, GL_STATIC_DRAW);
+
+    glBindVertexArray(containerVAO);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)0);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(3 * sizeof(GLfloat)));
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(6 * sizeof(GLfloat)));
+    glEnableVertexAttribArray(2);
+    glBindVertexArray(0);
+
     // Setup cube VAO
     GLuint cubeVAO, cubeVBO;
     glGenVertexArrays(1, &cubeVAO);
@@ -201,29 +301,6 @@ int main()
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (GLvoid*)0);
     glBindVertexArray(0);
 
-    // Load textures
-    //NMShader.Use();
-    //GLuint cubeDiffuse = loadTexture("../resource/textures/176.png");
-    //GLuint cubeNormal = loadTexture("../resource/textures/176_norm.png");
-    //glUniform1i(glGetUniformLocation(NMShader.Program, "cubeDiffuse"), 1);
-    //glUniform1i(glGetUniformLocation(NMShader.Program, "cubeNormal"), 2);
-
-#pragma endregion
-
-    // Cubemap (Skybox)
-    vector<const GLchar*> faces;
-    faces.push_back("../resource/skybox/cove/cove_rt.png");
-    faces.push_back("../resource/skybox/cove/cove_lf.png");
-    faces.push_back("../resource/skybox/cove/cove_up.png");
-    faces.push_back("../resource/skybox/cove/cove_dn.png");
-    faces.push_back("../resource/skybox/cove/cove_bk.png");
-    faces.push_back("../resource/skybox/cove/cove_ft.png");
-    GLuint skyboxTexture = loadCubemap(faces);
-    GLuint cubeDiffuse = loadTexture("../resource/textures/176.png");
-    GLuint cubeNormal = loadTexture("../resource/textures/176_norm.png");
-    modelShader.Use();
-    GLuint NMLoc = glGetUniformLocation(modelShader.Program, "normalMapping");
-    GLuint TSLoc = glGetUniformLocation(modelShader.Program, "inTangentSpace");
     // Load robot using our model loader
     Model robot("../resource/EM/EM-208.obj");
 
@@ -247,8 +324,6 @@ int main()
         // Clear buffers
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        glEnable(GL_LIGHTING); // TODO what?
-        glEnable(GL_LIGHT0); // TOD why?
 
         // Draw scene as normal
         glm::mat4 view;
@@ -269,15 +344,23 @@ int main()
         glUniformMatrix4fv(glGetUniformLocation(modelShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(normalCube));
         glUniformMatrix4fv(glGetUniformLocation(modelShader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(glGetUniformLocation(modelShader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
-        glUniform3fv(glGetUniformLocation(modelShader.Program, "lightPos"), 1, &lightPos[0]);
+        glUniform3f(glGetUniformLocation(modelShader.Program, "viewPos"), camera.Position.x, camera.Position.y, camera.Position.z); 
+        glUniform3fv(glGetUniformLocation(modelShader.Program, "Light.position"), 1, &lightPos[0]);
+        glUniform3f(glGetUniformLocation(modelShader.Program, "Light.ambient"), 0.2f, 0.2f, 0.2f);
+        glUniform3f(glGetUniformLocation(modelShader.Program, "Light.diffuse"), 0.5f, 0.5f, 0.5f);
+        glUniform3f(glGetUniformLocation(modelShader.Program, "Light.specular"), 1.0f, 1.0f, 1.0f);
+        // Set material properties
+        glUniform1f(glGetUniformLocation(modelShader.Program, "Material.shininess"), 32.0f);
         //glUniform3f(glGetUniformLocation(modelShader.Program, "cameraPos"), camera.Position.x, camera.Position.y, camera.Position.z);
-        //glUniform1i(glGetUniformLocation(modelShader.Program, "diffuseMap"), 0);
-        //glUniform1i(glGetUniformLocation(modelShader.Program, "normalMap"), 0);
-        glBindVertexArray(cubeVAO);
-        glActiveTexture(GL_TEXTURE3);
+        //glUniform1i(flag, (int)normal);
+        glBindVertexArray(containerVAO);
+        glActiveTexture(GL_TEXTURE1);
+        glUniform1i(glGetUniformLocation(modelShader.Program, "Material.diffuse"), 0);
         glBindTexture(GL_TEXTURE_2D, cubeDiffuse);
-        glActiveTexture(GL_TEXTURE4);
-        glBindTexture(GL_TEXTURE_2D, cubeNormal);
+        glActiveTexture(GL_TEXTURE2);
+        glUniform1i(glGetUniformLocation(modelShader.Program, "Material.specular"), 1);
+        glBindTexture(GL_TEXTURE_2D, cubeSpecular);
+        //glUniform1i(glGetUniformLocation(modelShader.Program, "NormalMap"), 1);
         glDrawArrays(GL_TRIANGLES, 0, 36);
         glBindVertexArray(0);
 
@@ -320,7 +403,7 @@ int main()
         glUniformMatrix4fv(glGetUniformLocation(skyboxShader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
         // skybox cube
         glBindVertexArray(skyboxVAO);
-        glActiveTexture(GL_TEXTURE5);
+        glActiveTexture(GL_TEXTURE0);
         glUniform1i(glGetUniformLocation(skyboxShader.Program, "skybox"), 0);
         glBindTexture(GL_TEXTURE_CUBE_MAP, skyboxTexture);
         glDrawArrays(GL_TRIANGLES, 0, 36);
@@ -369,8 +452,8 @@ GLuint loadCubemap(vector<const GLchar*> faces)
         glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, &image[0]);
         image.clear();
     }
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
@@ -399,15 +482,15 @@ GLuint loadTexture(GLchar* path)
     }
     // Assign texture to ID
     glBindTexture(GL_TEXTURE_2D, textureID);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, &image[0]);
     glGenerateMipmap(GL_TEXTURE_2D);
 
     // Parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glBindTexture(GL_TEXTURE_2D, textureID);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, &image[0]);
     image.clear();
 
     return textureID;
