@@ -305,6 +305,9 @@ int main()
     Model robot("../resource/EM/EM-208.obj");
 
     glm::vec3 lightPos(1.0f, 3.0f, 3.5f);
+	glm::vec4 ambient(0.2f, 0.2f, 0.2f, 1.0f);
+	glm::vec4 diffuse(0.5f, 0.5f, 0.5f, 1.0f);
+	glm::vec4 specular(1.0f, 1.0f, 1.0f, 1.0f);
 
     // Draw as wireframe
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -345,17 +348,17 @@ int main()
         glUniformMatrix4fv(glGetUniformLocation(modelShader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(glGetUniformLocation(modelShader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
         glUniform3f(glGetUniformLocation(modelShader.Program, "viewPos"), camera.Position.x, camera.Position.y, camera.Position.z); 
-        glUniform3fv(glGetUniformLocation(modelShader.Program, "Light.position"), 1, &lightPos[0]);
-        glUniform3f(glGetUniformLocation(modelShader.Program, "Light.ambient"), 0.2f, 0.2f, 0.2f);
-        glUniform3f(glGetUniformLocation(modelShader.Program, "Light.diffuse"), 0.5f, 0.5f, 0.5f);
-        glUniform3f(glGetUniformLocation(modelShader.Program, "Light.specular"), 1.0f, 1.0f, 1.0f);
+        glUniform3fv(glGetUniformLocation(modelShader.Program, "light.position"), 1, &lightPos[0]);
+        glUniform4fv(glGetUniformLocation(modelShader.Program, "light.ambient"), 1, &ambient[0]);
+        glUniform4fv(glGetUniformLocation(modelShader.Program, "light.diffuse"), 1, &diffuse[0]);
+        glUniform4fv(glGetUniformLocation(modelShader.Program, "light.specular"), 1, &specular[0]);
         // Set material properties
-        glUniform1f(glGetUniformLocation(modelShader.Program, "Material.shininess"), 32.0f);
+        glUniform1f(glGetUniformLocation(modelShader.Program, "material.shininess"), 32.0f);
         //glUniform3f(glGetUniformLocation(modelShader.Program, "cameraPos"), camera.Position.x, camera.Position.y, camera.Position.z);
         //glUniform1i(flag, (int)normal);
         glBindVertexArray(containerVAO);
-        glActiveTexture(GL_TEXTURE1);
-        glUniform1i(glGetUniformLocation(modelShader.Program, "Material.diffuse"), 0);
+        glActiveTexture(GL_TEXTURE1); // TODO FIX WRONG TEXTURES
+        glUniform1i(glGetUniformLocation(modelShader.Program, "material.diffuse"), 0);
         glBindTexture(GL_TEXTURE_2D, cubeDiffuse);
         glActiveTexture(GL_TEXTURE2);
         glUniform1i(glGetUniformLocation(modelShader.Program, "Material.specular"), 1);
@@ -485,8 +488,8 @@ GLuint loadTexture(GLchar* path)
     glGenerateMipmap(GL_TEXTURE_2D);
 
     // Parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glBindTexture(GL_TEXTURE_2D, textureID);
