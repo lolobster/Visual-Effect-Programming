@@ -231,6 +231,8 @@ int main()
 
 #pragma endregion
 
+	GLuint cubeDiffuse = loadTexture("../resource/textures/container_D.png");
+	GLuint cubeSpecular = loadTexture("../resource/textures/container_S.png");
     // Cubemap (Skybox)
     vector<const GLchar*> faces;
     faces.push_back("../resource/skybox/cove/cove_rt.png");
@@ -242,8 +244,6 @@ int main()
     GLuint skyboxTexture = loadCubemap(faces);
     //GLuint cubeDiffuse = loadTexture("../resource/textures/176.png");
     //GLuint cubeNormal = loadTexture("../resource/textures/176_norm.png");
-    GLuint cubeDiffuse = loadTexture("../resource/textures/container_D.png");
-    GLuint cubeSpecular = loadTexture("../resource/textures/container_S.png");
     
    // modelShader.Use();
 
@@ -304,7 +304,7 @@ int main()
     // Load robot using our model loader
     Model robot("../resource/EM/EM-208.obj");
 
-    glm::vec3 lightPos(1.0f, 3.0f, 3.5f);
+    glm::vec3 lightPos(0.0f, 3.0f, 3.5f);
 	glm::vec4 ambient(0.2f, 0.2f, 0.2f, 1.0f);
 	glm::vec4 diffuse(0.5f, 0.5f, 0.5f, 1.0f);
 	glm::vec4 specular(1.0f, 1.0f, 1.0f, 1.0f);
@@ -353,14 +353,14 @@ int main()
         glUniform4fv(glGetUniformLocation(modelShader.Program, "light.diffuse"), 1, &diffuse[0]);
         glUniform4fv(glGetUniformLocation(modelShader.Program, "light.specular"), 1, &specular[0]);
         // Set material properties
-        glUniform1f(glGetUniformLocation(modelShader.Program, "material.shininess"), 32.0f);
+        glUniform1f(glGetUniformLocation(modelShader.Program, "material.shininess"), 70.0f);
         //glUniform3f(glGetUniformLocation(modelShader.Program, "cameraPos"), camera.Position.x, camera.Position.y, camera.Position.z);
         //glUniform1i(flag, (int)normal);
         glBindVertexArray(containerVAO);
-        glActiveTexture(GL_TEXTURE1); // TODO FIX WRONG TEXTURES
+        glActiveTexture(GL_TEXTURE0); // TODO FIX WRONG TEXTURES
         glUniform1i(glGetUniformLocation(modelShader.Program, "material.diffuse"), 0);
         glBindTexture(GL_TEXTURE_2D, cubeDiffuse);
-        glActiveTexture(GL_TEXTURE2);
+        glActiveTexture(GL_TEXTURE1);
         glUniform1i(glGetUniformLocation(modelShader.Program, "Material.specular"), 1);
         glBindTexture(GL_TEXTURE_2D, cubeSpecular);
         //glUniform1i(glGetUniformLocation(modelShader.Program, "NormalMap"), 1);
@@ -485,6 +485,7 @@ GLuint loadTexture(GLchar* path)
     }
     // Assign texture to ID
     glBindTexture(GL_TEXTURE_2D, textureID);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, &image[0]);
     glGenerateMipmap(GL_TEXTURE_2D);
 
     // Parameters
@@ -493,7 +494,6 @@ GLuint loadTexture(GLchar* path)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glBindTexture(GL_TEXTURE_2D, textureID);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, &image[0]);
     image.clear();
 
     return textureID;
